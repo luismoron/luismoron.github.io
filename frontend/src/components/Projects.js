@@ -23,7 +23,7 @@ const Projects = () => {
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Proyectos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Proyectos</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Una selección de proyectos que he desarrollado, obtenidos automáticamente de mis 
             repositorios de GitHub y GitLab.
