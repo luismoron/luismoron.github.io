@@ -42,7 +42,7 @@ const Skills = () => {
               <Badge
                 key={index}
                 variant="secondary"
-                className="px-3 py-1 text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                className="px-3 py-1 text-sm hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-primary-foreground transition-all duration-300 cursor-pointer transform hover:scale-105"
               >
                 {skill}
               </Badge>
