@@ -36,7 +36,7 @@ const Projects = () => {
             variant={filter === 'all' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('all')}
-            className="flex items-center space-x-2"
+            className={`flex items-center space-x-2 ${filter === 'all' ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
           >
             <Filter className="w-4 h-4" />
             <span>Todos</span>
@@ -45,7 +45,7 @@ const Projects = () => {
             variant={filter === 'featured' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('featured')}
-            className="flex items-center space-x-2"
+            className={`flex items-center space-x-2 ${filter === 'featured' ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
           >
             <Star className="w-4 h-4" />
             <span>Destacados</span>
