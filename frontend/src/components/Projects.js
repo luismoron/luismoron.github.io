@@ -56,6 +56,7 @@ const Projects = () => {
               variant={filter === tech ? 'default' : 'outline'}
               size="sm"
               onClick={() => setFilter(tech)}
+              className={filter === tech ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}
             >
               {tech}
             </Button>
