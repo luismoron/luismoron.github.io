@@ -77,7 +77,7 @@ const About = () => {
                 key={index}
                 className="flex items-start space-x-4 p-6 bg-card rounded-lg border hover:shadow-lg transition-shadow"
               >
-                <div className="p-3 bg-primary/10 rounded-lg text-primary">
+                <div className="p-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg text-primary border border-primary/20">
                   {highlight.icon}
                 </div>
                 <div>
