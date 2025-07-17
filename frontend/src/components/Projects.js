@@ -75,7 +75,7 @@ const Projects = () => {
                 />
                 {project.featured && (
                   <div className="absolute top-4 left-4">
-                    <Badge variant="default" className="bg-primary/90 text-primary-foreground">
+                    <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg">
                       <Star className="w-3 h-3 mr-1" />
                       Destacado
                     </Badge>
