@@ -55,7 +55,7 @@ const Hero = () => {
           {/* CTA Button */}
           <button
             onClick={scrollToAbout}
-            className="group inline-flex items-center space-x-2 px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+            className="group inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             <span>Conoce más sobre mí</span>
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
