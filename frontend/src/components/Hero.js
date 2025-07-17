@@ -20,9 +20,9 @@ const Hero = () => {
               <img
                 src={mockProfile.avatar}
                 alt={mockProfile.name}
-                className="w-32 h-32 rounded-full mx-auto border-4 border-primary/20 shadow-xl"
+                className="w-32 h-32 rounded-full mx-auto border-4 border-primary/30 shadow-xl"
               />
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/70 rounded-full blur opacity-20"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full blur opacity-30 animate-pulse"></div>
             </div>
           </div>
 
