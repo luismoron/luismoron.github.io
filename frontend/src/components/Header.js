@@ -36,10 +36,10 @@ const Header = ({ activeSection, setActiveSection }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
               <span className="text-primary-foreground font-bold text-sm">LM</span>
             </div>
-            <span className="font-bold text-lg">Luis Morón</span>
+            <span className="font-bold text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Luis Morón</span>
           </div>
 
           {/* Desktop Navigation */}
