@@ -123,7 +123,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               ))}
               <button
                 onClick={downloadCV}
-                className="flex items-center space-x-2 py-2 px-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors mt-2"
+                className="flex items-center space-x-2 py-2 px-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg mt-2"
               >
                 <Download className="w-4 h-4" />
                 <span>Descargar CV</span>
