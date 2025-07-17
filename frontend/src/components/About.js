@@ -29,7 +29,7 @@ const About = () => {
     <section id="about" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Acerca de Mí</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Acerca de Mí</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Soy un desarrollador full-stack apasionado por crear soluciones innovadoras y eficientes. 
             Con varios años de experiencia en desarrollo web y móvil, me especializo en tecnologías 
