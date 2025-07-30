@@ -23,7 +23,7 @@ const Projects = () => {
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Proyectos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Proyectos</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Una selección de proyectos que he desarrollado, obtenidos automáticamente de mis 
             repositorios de GitHub y GitLab.
@@ -36,7 +36,7 @@ const Projects = () => {
             variant={filter === 'all' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('all')}
-            className={`flex items-center space-x-2 ${filter === 'all' ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
+            className={`flex items-center space-x-2 ${filter === 'all' ? 'bg-emerald-700 from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
           >
             <Filter className="w-4 h-4" />
             <span>Todos</span>
@@ -45,7 +45,7 @@ const Projects = () => {
             variant={filter === 'featured' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('featured')}
-            className={`flex items-center space-x-2 ${filter === 'featured' ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
+            className={`flex items-center space-x-2 ${filter === 'featured' ? 'bg-emerald-700 from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
           >
             <Star className="w-4 h-4" />
             <span>Destacados</span>
@@ -56,7 +56,7 @@ const Projects = () => {
               variant={filter === tech ? 'default' : 'outline'}
               size="sm"
               onClick={() => setFilter(tech)}
-              className={filter === tech ? 'bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}
+              className={filter === tech ? 'bg-emerald-700 from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}
             >
               {tech}
             </Button>
@@ -75,7 +75,7 @@ const Projects = () => {
                 />
                 {project.featured && (
                   <div className="absolute top-4 left-4">
-                    <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-primary-foreground shadow-lg">
+                    <Badge variant="default" className=" from-primary to-secondary text-primary-foreground shadow-lg">
                       <Star className="w-3 h-3 mr-1" />
                       Destacado
                     </Badge>

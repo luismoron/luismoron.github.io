@@ -11,7 +11,7 @@ const Skills = () => {
     <section id="skills" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Habilidades</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Habilidades</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Tecnologías y herramientas que utilizo en mi día a día, constantemente actualizadas 
             basándose en mis proyectos de GitHub y GitLab.
@@ -42,7 +42,7 @@ const Skills = () => {
               <Badge
                 key={index}
                 variant="secondary"
-                className="px-3 py-1 text-sm hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-primary-foreground transition-all duration-300 cursor-pointer transform hover:scale-105"
+                className="px-3 py-1 text-sm  hover:from-primary hover:to-secondary hover:text-primary-foreground transition-all duration-300 cursor-pointer transform hover:scale-105"
               >
                 {skill}
               </Badge>

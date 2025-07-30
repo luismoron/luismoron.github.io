@@ -36,10 +36,10 @@ const Header = ({ activeSection, setActiveSection }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-emerald-700 from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
               <span className="text-primary-foreground font-bold text-sm">LM</span>
             </div>
-            <span className="font-bold text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Luis Morón</span>
+            <span className="font-bold text-lg bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Luis Morón</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -82,7 +82,7 @@ const Header = ({ activeSection, setActiveSection }) => {
             {/* Download CV */}
             <button
               onClick={downloadCV}
-              className="hidden md:flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="hidden md:flex items-center space-x-2 px-4 py-2 bg-emerald-700 from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <Download className="w-4 h-4" />
               <span>CV</span>
@@ -123,7 +123,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               ))}
               <button
                 onClick={downloadCV}
-                className="flex items-center space-x-2 py-2 px-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg mt-2"
+                className="flex items-center space-x-2 py-2 px-4 bg-emerald-700 from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg mt-2"
               >
                 <Download className="w-4 h-4" />
                 <span>Descargar CV</span>

@@ -29,7 +29,7 @@ const About = () => {
     <section id="about" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Acerca de Mí</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4  from-primary to-secondary bg-clip-text text-transparent">Acerca de Mí</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Soy un desarrollador full-stack apasionado por crear soluciones innovadoras y eficientes. 
             Con varios años de experiencia en desarrollo web y móvil, me especializo en tecnologías 
@@ -60,11 +60,11 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 pt-6">
               <div className="text-center p-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg border border-primary/10">
-                <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">50+</div>
+                <div className="text-2xl font-bold bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">50+</div>
                 <div className="text-sm text-muted-foreground">Proyectos Completados</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-secondary/5 to-primary/5 rounded-lg border border-secondary/10">
-                <div className="text-2xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">5+</div>
+                <div className="text-2xl font-bold bg-emerald-700 from-secondary to-primary bg-clip-text text-transparent">5+</div>
                 <div className="text-sm text-muted-foreground">Años de Experiencia</div>
               </div>
             </div>

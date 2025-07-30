@@ -2,8 +2,8 @@
 export const mockProfile = {
   name: "Luis Morón",
   title: "Desarrollador Full Stack",
-  email: "luis@example.com",
-  location: "España",
+  email: "leonelmoron@gmail.com",
+  location: "Venezuela",
   bio: "Desarrollador apasionado con experiencia en desarrollo web y móvil. Siempre buscando nuevas tecnologías y desafíos.",
   github: "https://github.com/luismoron/",
   gitlab: "https://gitlab.com/luislmoron",
