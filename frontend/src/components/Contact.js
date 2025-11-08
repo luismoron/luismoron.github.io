@@ -29,16 +29,26 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock form submission - se implementará con backend real
-    setTimeout(() => {
-      toast({
-        title: "Mensaje enviado!",
-        description: "Te responderé lo antes posible.",
-        duration: 5000,
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    // Crear mensaje para WhatsApp
+    const message = `Hola Luis, soy ${formData.name}.\n\n${formData.message}\n\nEmail: ${formData.email}\nAsunto: ${formData.subject}`;
+    
+    // Número de WhatsApp (remover + y espacios)
+    const whatsappNumber = mockProfile.phone.replace(/\+/g, '').replace(/\s/g, '');
+    
+    // Crear enlace de WhatsApp
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Abrir WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    toast({
+      title: "Abriendo WhatsApp...",
+      description: "Se abrirá WhatsApp con tu mensaje pre-llenado.",
+      duration: 3000,
+    });
+    
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
@@ -51,8 +61,8 @@ const Contact = () => {
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Teléfono",
-      value: "+58 (0424) 1850752",
-      href: "tel:+34600000000"
+      value: mockProfile.phone,
+      href: `tel:${mockProfile.phone}`
     },
     {
       icon: <MapPin className="w-5 h-5" />,
@@ -160,7 +170,7 @@ const Contact = () => {
             <CardHeader>
               <CardTitle>Envíame un mensaje</CardTitle>
               <CardDescription>
-                Completa el formulario y te responderé lo antes posible
+                Completa el formulario y se abrirá WhatsApp con tu mensaje pre-llenado
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -226,12 +236,12 @@ const Contact = () => {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground"></div>
-                      <span>Enviando...</span>
+                      <span>Abriendo WhatsApp...</span>
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      <span>Enviar mensaje</span>
+                      <span>Enviar por WhatsApp</span>
                     </>
                   )}
                 </Button>

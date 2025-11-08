@@ -3,6 +3,7 @@ export const mockProfile = {
   name: "Luis Morón",
   title: "Desarrollador Full Stack",
   email: "leonelmoron@gmail.com",
+  phone: "+584241850752", // Reemplaza con tu número real de WhatsApp
   location: "Venezuela",
   bio: "Desarrollador apasionado con experiencia en desarrollo web y móvil. Siempre buscando nuevas tecnologías y desafíos.",
   github: "https://github.com/luismoron/",
