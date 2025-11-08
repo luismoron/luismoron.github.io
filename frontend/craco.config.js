@@ -43,4 +43,18 @@ module.exports = {
       return webpackConfig;
     },
   },
+  devServer: (devServerConfig, { env, paths, proxy, allowedHost }) => {
+    // Override deprecated options to fix warnings
+    delete devServerConfig.onAfterSetupMiddleware;
+    delete devServerConfig.onBeforeSetupMiddleware;
+    
+    // Add setupMiddlewares if not present
+    if (!devServerConfig.setupMiddlewares) {
+      devServerConfig.setupMiddlewares = (middlewares, devServer) => {
+        return middlewares;
+      };
+    }
+    
+    return devServerConfig;
+  },
 };

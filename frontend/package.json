@@ -58,7 +58,7 @@
     "vaul": "^1.1.2"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation craco start",
     "build": "craco build",
     "test": "craco test",
     "predeploy": "pnpm run build",
@@ -80,6 +80,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
