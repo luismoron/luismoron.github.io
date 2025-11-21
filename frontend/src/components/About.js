@@ -31,9 +31,7 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4  from-primary to-secondary bg-clip-text text-transparent">Acerca de Mí</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Soy un desarrollador full-stack apasionado por crear soluciones innovadoras y eficientes. 
-            Con varios años de experiencia en desarrollo web y móvil, me especializo en tecnologías 
-            modernas y siempre estoy buscando nuevos desafíos.
+            Ingeniero de Software enfocado en la excelencia técnica y la innovación. Transformo ideas complejas en soluciones digitales robustas, especializándome en arquitecturas escalables tanto para web como para móvil. Mi objetivo es crear software que no solo funcione, sino que destaque por su rendimiento y experiencia de usuario.
           </p>
         </div>
 
@@ -42,18 +40,13 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                Mi trayectoria como desarrollador comenzó con la curiosidad por entender cómo 
-                funcionan las cosas. Esta pasión me ha llevado a explorar diferentes tecnologías 
-                y a mantenerme actualizado con las últimas tendencias del desarrollo.
+                Mi carrera se define por una búsqueda constante de la calidad y la eficiencia. Desde el diseño de sistemas backend de alto rendimiento hasta la creación de interfaces de usuario intuitivas, abordo cada proyecto con una mentalidad analítica y orientada a resultados.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Me enfoco en escribir código limpio, escalable y mantenible. Creo firmemente 
-                en la importancia de la colaboración en equipo y en la comunicación efectiva 
-                para lograr resultados excepcionales.
+                Priorizo la escritura de código limpio, modular y mantenible, siguiendo las mejores prácticas de la industria. Valoro profundamente la colaboración técnica y creo que las mejores soluciones surgen de la comunicación clara y el trabajo en equipo.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Cuando no estoy programando, me gusta contribuir a proyectos open source, 
-                aprender nuevas tecnologías y compartir conocimientos con la comunidad de desarrolladores.
+                Más allá del código, soy un entusiasta del aprendizaje continuo y el código abierto. Dedico tiempo a explorar tecnologías emergentes y a compartir conocimientos, contribuyendo activamente al crecimiento de la comunidad tecnológica.
               </p>
             </div>
 

@@ -1,7 +1,7 @@
 // Mock data para el portafolio - Se reemplazará con datos reales de GitHub/GitLab
 export const mockProfile = {
   name: "Luis Morón",
-  title: "Desarrollador Full Stack",
+  title: "Desarrollador de Software",
   email: "leonelmoron@gmail.com",
   phone: "+584241850752", // Reemplaza con tu número real de WhatsApp
   location: "Venezuela",
@@ -31,7 +31,7 @@ export const mockProjects = [
     tech: ["Shell", "Linux", "Git"],
     github: "https://github.com/luismoron/dotfiles",
     demo: null,
-    image: "https://via.placeholder.com/400x250/4f46e5/ffffff?text=Terminal+Config",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     featured: true
   },
   {
@@ -41,7 +41,7 @@ export const mockProjects = [
     tech: ["Python", "Shell"],
     github: "https://github.com/luismoron/cli",
     demo: null,
-    image: "https://via.placeholder.com/400x250/059669/ffffff?text=Python+CLI",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
     featured: true
   },
   {
@@ -51,7 +51,7 @@ export const mockProjects = [
     tech: ["PHP", "MySQL", "HTML", "CSS"],
     github: "https://github.com/luismoron/barberianaza",
     demo: null,
-    image: "https://via.placeholder.com/400x250/dc2626/ffffff?text=Barber+Shop+System",
+    image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
     featured: false
   },
   {
@@ -61,7 +61,7 @@ export const mockProjects = [
     tech: ["JavaScript", "Node.js", "Express"],
     github: "https://github.com/luismoron/barbershopteams",
     demo: null,
-    image: "https://via.placeholder.com/400x250/0ea5e9/ffffff?text=Barbershop+Teams",
+    image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
     featured: false
   }
 ];
