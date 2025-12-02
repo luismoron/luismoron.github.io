@@ -1,155 +1,70 @@
-# Portafolio de Luis Morón
+# Getting Started with Create React App
 
-¡Bienvenido a mi portafolio personal! Soy Luis Morón, un apasionado Desarrollador Full Stack con experiencia en desarrollo web y móvil. Este sitio web muestra mis proyectos, habilidades y experiencia profesional.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🌟 Características
+## Available Scripts
 
-- **Diseño Responsivo**: Optimizado para dispositivos móviles y desktop
-- **Tema Oscuro/Claro**: Cambia entre modos de visualización
-- **Secciones Interactivas**: Hero, Acerca de mí, Habilidades, Proyectos, Experiencia, Contacto
-- **Integración con WhatsApp**: Formulario de contacto que abre WhatsApp directamente
-- **Enlaces a Redes Sociales**: GitHub, GitLab, LinkedIn
+In the project directory, you can run:
 
-## 🛠️ Tecnologías Utilizadas
+### `npm start`
 
-### Frontend
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-- **React 19** - Framework principal
-- **Tailwind CSS** - Estilos y diseño
-- **React Router** - Navegación
-- **Radix UI** - Componentes accesibles
-- **Lucide React** - Iconos
-- **Next Themes** - Gestión de temas
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Herramientas de Desarrollo
+### `npm test`
 
-- **Create React App** con CRACO
-- **ESLint** - Linting
-- **PostCSS** - Procesamiento CSS
-- **Autoprefixer** - Prefijos CSS
-- **GitHub Pages** - Despliegue
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 🚀 Instalación y Uso
+### `npm run build`
 
-### Prerrequisitos
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Node.js 22+
-- pnpm (recomendado) o npm
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Instalación
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-1. Clona el repositorio:
+### `npm run eject`
 
-   ```bash
-   git clone https://github.com/luismoron/luismoron.github.io.git
-   cd luismoron.github.io/frontend
-   ```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-2. Instala las dependencias:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-   ```bash
-   pnpm install
-   ```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-3. Inicia el servidor de desarrollo:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-   ```bash
-   pnpm start
-   ```
+## Learn More
 
-4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Construcción para Producción
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```bash
-pnpm run build
-```
+### Code Splitting
 
-Esto crea una carpeta `build` con los archivos optimizados.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## 📦 Despliegue
+### Analyzing the Bundle Size
 
-El sitio está desplegado automáticamente en GitHub Pages. Para desplegar manualmente:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-```bash
-pnpm run deploy
-```
+### Making a Progressive Web App
 
-Esto construye el proyecto y lo publica en la rama `gh-pages`.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## 📁 Estructura del Proyecto
+### Advanced Configuration
 
-```
-frontend/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── ui/          # Componentes reutilizables
-│   │   ├── Header.js
-│   │   ├── Hero.js
-│   │   ├── About.js
-│   │   ├── Skills.js
-│   │   ├── Projects.js
-│   │   ├── Experience.js
-│   │   └── Contact.js
-│   ├── contexts/
-│   │   └── ThemeContext.js
-│   ├── data/
-│   │   └── mockData.js
-│   ├── hooks/
-│   │   └── use-toast.js
-│   ├── lib/
-│   │   └── utils.js
-│   ├── pages/
-│   │   └── Portfolio.js
-│   └── App.js
-├── package.json
-└── tailwind.config.js
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## 🎯 Proyectos Destacados
+### Deployment
 
-### 1. Dotfiles
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Configuración personal de entorno de desarrollo con scripts y herramientas.
+### `npm run build` fails to minify
 
-- **Tecnologías**: Shell, Linux, Git
-- **Enlace**: [GitHub](https://github.com/luismoron/dotfiles)
-
-### 2. CLI Tool
-
-Script principal de control para configuración de dotfiles Caelestia.
-
-- **Tecnologías**: Python, Shell
-- **Enlace**: [GitHub](https://github.com/luismoron/cli)
-
-### 3. Sistema de Barbería
-
-Sistema de gestión de citas para barberías en PHP y MySQL.
-
-- **Tecnologías**: PHP, MySQL, HTML, CSS
-- **Enlace**: [GitHub](https://github.com/luismoron/barberianaza)
-
-### 4. Barbershop Teams
-
-Aplicación para gestión de citas de barberos con equipos.
-
-- **Tecnologías**: JavaScript, Node.js, Express
-- **Enlace**: [GitHub](https://github.com/luismoron/barbershopteams)
-
-## 📞 Contacto
-
-- **Email**: [leonelmoron@gmail.com](mailto:leonelmoron@gmail.com)
-- **WhatsApp**: +58 424 123 4567 (reemplaza con tu número real)
-- **GitHub**: [luismoron](https://github.com/luismoron)
-- **GitLab**: [luislmoron](https://gitlab.com/luislmoron)
-- **LinkedIn**: [luismoron](https://linkedin.com/in/luismoron)
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
----
-
-⭐ Si te gusta mi trabajo, ¡dale una estrella al repositorio!
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

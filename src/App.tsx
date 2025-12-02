@@ -4,16 +4,14 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Portfolio from "./pages/Portfolio";
 import "./App.css";
 
-function App() {
+function App(): JSX.Element {
   return (
     <ThemeProvider>
-      <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Portfolio />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

@@ -12,7 +12,7 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="App">
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
       <main>
         <Hero />

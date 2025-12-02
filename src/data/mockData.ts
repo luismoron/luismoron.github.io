@@ -1,5 +1,16 @@
 // Mock data para el portafolio - Se reemplazará con datos reales de GitHub/GitLab
-export const mockProfile = {
+export const mockProfile: {
+  name: string;
+  title: string;
+  email: string;
+  phone: string;
+  location: string;
+  bio: string;
+  github: string;
+  gitlab: string;
+  linkedin: string;
+  avatar: string;
+} = {
   name: "Luis Morón",
   title: "Desarrollador de Software",
   email: "leonelmoron@gmail.com",
@@ -12,7 +23,11 @@ export const mockProfile = {
   avatar: "https://github.com/luismoron.png"
 };
 
-export const mockSkills = [
+export const mockSkills: {
+  name: string;
+  level: number;
+  projects: number;
+}[] = [
   { name: "JavaScript", level: 90, projects: 15 },
   { name: "React", level: 85, projects: 12 },
   { name: "Node.js", level: 80, projects: 10 },
@@ -23,7 +38,16 @@ export const mockSkills = [
   { name: "AWS", level: 55, projects: 3 }
 ];
 
-export const mockProjects = [
+export const mockProjects: {
+  id: number;
+  name: string;
+  description: string;
+  tech: string[];
+  github: string;
+  demo: string | null;
+  image: string;
+  featured: boolean;
+}[] = [
   {
     id: 1,
     name: "Dotfiles",
@@ -66,7 +90,13 @@ export const mockProjects = [
   }
 ];
 
-export const mockExperience = [
+export const mockExperience: {
+  id: number;
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+}[] = [
   {
     id: 1,
     title: "Senior Full Stack Developer",
