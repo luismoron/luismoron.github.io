@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { Moon, Sun, Menu, X, Download, Github, GitlabIcon as Gitlab } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
+import { generateCV } from '../lib/cvGenerator';
 
 const Header = ({ activeSection, setActiveSection }) => {
   const { theme, toggleTheme } = useTheme();
@@ -26,8 +27,13 @@ const Header = ({ activeSection, setActiveSection }) => {
   };
 
   const downloadCV = () => {
-    // Mock download - se implementará con archivo real
-    alert('Descarga de CV en construcción...');
+    console.log('Iniciando descarga de CV...');
+    try {
+      generateCV();
+      console.log('CV generado exitosamente');
+    } catch (error) {
+      console.error('Error al generar CV:', error);
+    }
   };
 
   return (

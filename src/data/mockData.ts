@@ -19,7 +19,7 @@ export const mockProfile: {
   bio: "Desarrollador apasionado con experiencia en desarrollo web y móvil. Siempre buscando nuevas tecnologías y desafíos.",
   github: "https://github.com/luismoron/",
   gitlab: "https://gitlab.com/luislmoron",
-  linkedin: "https://linkedin.com/in/luismoron",
+  linkedin: "https://www.linkedin.com/in/luis-morón-922711323",
   avatar: "https://github.com/luismoron.png"
 };
 

@@ -5,7 +5,8 @@ const ThemeContext = createContext();
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    // Return a default theme for SSR
+    return { theme: 'light', toggleTheme: () => {} };
   }
   return context;
 };
@@ -14,17 +15,22 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
+    // Check if we're on the client side
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark');
+      }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.documentElement.className = theme;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', theme);
+      document.documentElement.className = theme;
+    }
   }, [theme]);
 
   const toggleTheme = () => {

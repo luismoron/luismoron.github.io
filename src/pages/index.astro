@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import { ThemeProvider } from '../contexts/ThemeContext';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
+import Experience from '../components/Experience';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luis Morón - Portfolio</title>
+  </head>
+  <body>
+    <ThemeProvider client:load>
+      <div class="App">
+        <Header client:load />
+        <main>
+          <Hero client:load />
+          <About client:load />
+          <Skills client:load />
+          <Projects client:load />
+          <Experience client:load />
+          <Contact client:load />
+        </main>
+        <Footer client:load />
+      </div>
+    </ThemeProvider>
+  </body>
+</html>

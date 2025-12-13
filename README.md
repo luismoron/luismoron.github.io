@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# 🚀 Luis Morón - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un portafolio personal moderno construido con **Astro** y **React**, estilizado con **Tailwind CSS**. Incluye secciones para mostrar proyectos, experiencia, habilidades y contacto.
 
-## Available Scripts
+## ✨ Características
 
-In the project directory, you can run:
+- **⚡ Astro Framework**: Rendimiento optimizado con generación de sitios estáticos
+- **⚛️ React Components**: Componentes interactivos como "islands" para mejor rendimiento
+- **🎨 Tailwind CSS**: Diseño moderno y responsivo
+- **🌙 Modo Oscuro**: Soporte completo para tema claro y oscuro
+- **📱 Responsive**: Diseño adaptativo para todos los dispositivos
+- **🔧 Node 20+**: Compatible con versiones modernas de Node.js
+- **📄 CV Automático**: Generación y descarga de CV en PDF con toda tu información
 
-### `npm start`
+## 🛠️ Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Framework**: [Astro](https://astro.build/)
+- **UI Components**: React con [Radix UI](https://www.radix-ui.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Package Manager**: [pnpm](https://pnpm.io/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Inicio Rápido
 
-### `npm test`
+### Prerrequisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 20.0.0 o superior
+- pnpm (recomendado) o npm
 
-### `npm run build`
+### Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clona el repositorio:
+```bash
+git clone https://github.com/luismoron/luismoron.github.io.git
+cd luismoron.github.io
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Instala las dependencias:
+```bash
+pnpm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Inicia el servidor de desarrollo:
+```bash
+pnpm run start
+```
 
-### `npm run eject`
+4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📜 Scripts Disponibles
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `pnpm run start` - Inicia el servidor de desarrollo
+- `pnpm run build` - Construye el proyecto para producción
+- `pnpm run preview` - Vista previa del build de producción
+- `pnpm run deploy` - Despliega a GitHub Pages (requiere configuración)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Estructura del Proyecto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── components/          # Componentes React reutilizables
+│   ├── ui/             # Componentes de UI básicos
+│   ├── About.jsx       # Sección Acerca de
+│   ├── Contact.jsx     # Sección de Contacto
+│   ├── Experience.jsx  # Sección de Experiencia
+│   ├── Footer.jsx      # Pie de página
+│   ├── Header.jsx      # Navegación principal
+│   ├── Hero.jsx        # Sección principal
+│   ├── Projects.jsx    # Sección de Proyectos
+│   └── Skills.jsx      # Sección de Habilidades
+├── contexts/           # Contextos de React
+│   └── ThemeContext.jsx # Gestión de tema oscuro/claro
+├── data/               # Datos estáticos
+│   └── mockData.ts     # Información del portafolio
+├── hooks/              # Hooks personalizados
+│   └── use-toast.ts    # Hook para notificaciones
+├── lib/                # Utilidades
+│   └── utils.ts        # Funciones de utilidad
+├── pages/              # Páginas de Astro
+│   └── index.astro     # Página principal
+└── styles/             # Estilos globales
+    └── global.css      # Estilos base de Tailwind
+```
 
-## Learn More
+## 🎨 Personalización
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cambiar Información Personal
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Edita el archivo `src/data/mockData.ts` para actualizar:
+- Información personal
+- Proyectos
+- Experiencia laboral
+- Habilidades
+- Enlaces de contacto
 
-### Code Splitting
+### Modificar Estilos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Los estilos están centralizados en Tailwind CSS. Para cambios globales, modifica:
+- `tailwind.config.mjs` - Configuración de Tailwind
+- `src/styles/global.css` - Estilos base
 
-### Analyzing the Bundle Size
+### Agregar Nuevas Secciones
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Crea un nuevo componente en `src/components/`
+2. Importalo en `src/pages/index.astro`
+3. Agrega el componente con `client:load` si necesita interactividad
 
-### Making a Progressive Web App
+### Funcionalidad de CV
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+El portafolio incluye una función automática de generación de CV en PDF que incluye:
 
-### Advanced Configuration
+- **Información personal**: Nombre, título, contacto y biografía
+- **Habilidades técnicas**: Con barras de progreso visuales
+- **Experiencia profesional**: Historial laboral completo
+- **Proyectos destacados**: Los proyectos marcados como destacados
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Para descargar el CV, simplemente haz clic en el botón "CV" en la barra de navegación.
 
-### Deployment
+**Personalización del CV:**
+- Edita la información en `src/data/mockData.ts`
+- Modifica el diseño en `src/lib/cvGenerator.js`
+- Los cambios se reflejarán automáticamente en el PDF generado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🚀 Despliegue
 
-### `npm run build` fails to minify
+### GitHub Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El proyecto está configurado para desplegarse automáticamente en GitHub Pages:
+
+```bash
+pnpm run deploy
+```
+
+### Otros Servicios
+
+El build de producción se genera en la carpeta `dist/` y puede desplegarse en cualquier servicio de hosting estático como:
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+
+## 🤝 Contribuir
+
+Si encuentras algún problema o tienes sugerencias:
+
+1. Abre un issue en [GitHub Issues](https://github.com/luismoron/luismoron.github.io/issues)
+2. Crea un pull request con tus mejoras
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](LICENSE).
+
+---
+
+⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub!</content>
+<parameter name="filePath">README.md
