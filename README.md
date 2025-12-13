@@ -107,19 +107,22 @@ Los estilos están centralizados en Tailwind CSS. Para cambios globales, modific
 
 ### Funcionalidad de CV
 
-El portafolio incluye una función automática de generación de CV en PDF que incluye:
+El portafolio incluye un botón de descarga de CV que permite descargar un archivo PDF estático profesional.
 
-- **Información personal**: Nombre, título, contacto y biografía
-- **Habilidades técnicas**: Con barras de progreso visuales
-- **Experiencia profesional**: Historial laboral completo
-- **Proyectos destacados**: Los proyectos marcados como destacados
+**Contenido del CV:**
+- Información personal completa
+- Biografía profesional
+- Habilidades técnicas
+- Experiencia laboral
+- Proyectos destacados
+- Información de contacto
 
 Para descargar el CV, simplemente haz clic en el botón "CV" en la barra de navegación.
 
-**Personalización del CV:**
-- Edita la información en `src/data/mockData.ts`
-- Modifica el diseño en `src/lib/cvGenerator.js`
-- Los cambios se reflejarán automáticamente en el PDF generado
+**Archivo del CV:**
+- Ubicación: `public/CV_Luis_Moron.pdf`
+- Nombre de descarga: `CV_Luis_Moron.pdf`
+- Para actualizar el CV, reemplaza el archivo en la carpeta `public/`
 
 ## 🚀 Despliegue
 

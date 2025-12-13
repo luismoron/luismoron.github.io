@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { Moon, Sun, Menu, X, Download, Github, GitlabIcon as Gitlab } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
-import { generateCV } from '../lib/cvGenerator';
 
 const Header = ({ activeSection, setActiveSection }) => {
   const { theme, toggleTheme } = useTheme();
@@ -27,13 +26,14 @@ const Header = ({ activeSection, setActiveSection }) => {
   };
 
   const downloadCV = () => {
-    console.log('Iniciando descarga de CV...');
-    try {
-      generateCV();
-      console.log('CV generado exitosamente');
-    } catch (error) {
-      console.error('Error al generar CV:', error);
-    }
+    // Crear un enlace temporal para descargar el PDF estático
+    const link = document.createElement('a');
+    link.href = '/CV_Luis_Moron.pdf';
+    link.download = 'CV_Luis_Moron.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
