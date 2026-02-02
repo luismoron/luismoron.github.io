@@ -1,27 +1,27 @@
 import React from 'react';
-import { Code, Smartphone, Globe, Database } from 'lucide-react';
+import { Code, Smartphone, Globe, Database, Server, Terminal } from 'lucide-react';
 
 const About = () => {
   const highlights = [
     {
-      icon: <Code className="w-6 h-6" />,
-      title: "Desarrollo Web",
-      description: "Experiencia en React, Vue.js, Node.js y frameworks modernos"
-    },
-    {
-      icon: <Smartphone className="w-6 h-6" />,
-      title: "Desarrollo Móvil",
-      description: "Aplicaciones nativas y híbridas con React Native y Flutter"
+      icon: <Server className="w-6 h-6" />,
+      title: "Arquitectura Moderna",
+      description: "Orquestación con Podman y Docker para entornos ágiles"
     },
     {
       icon: <Database className="w-6 h-6" />,
-      title: "Backend & APIs",
-      description: "Arquitectura de servidores robustos y APIs RESTful"
+      title: "Eficiencia en Datos",
+      description: "Diseño complejo en PostgreSQL y MongoDB"
     },
     {
-      icon: <Globe className="w-6 h-6" />,
-      title: "DevOps & Cloud",
-      description: "Despliegue y gestión en AWS, Docker y herramientas CI/CD"
+      icon: <Code className="w-6 h-6" />,
+      title: "Código con Propósito",
+      description: "Clean Code, React y lógica de negocio en Go"
+    },
+    {
+      icon: <Terminal className="w-6 h-6" />,
+      title: "Mentalidad DevOps",
+      description: "Automatización con IA y CI/CD"
     }
   ];
 
@@ -31,7 +31,7 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4  from-primary to-secondary bg-clip-text text-transparent">Acerca de Mí</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Programador de Software enfocado en la excelencia técnica y la innovación. Transformo ideas complejas en soluciones digitales robustas, especializándome en arquitecturas escalables tanto para web como para móvil. Mi objetivo es crear software que no solo funcione, sino que destaque por su rendimiento y experiencia de usuario.
+            Mi enfoque va más allá de escribir código; se trata de ingeniería de precisión. Creo firmemente que una solución robusta nace de la combinación entre un backend sólido y una infraestructura moderna.
           </p>
         </div>
 
@@ -40,13 +40,10 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed">
-                Mi carrera se define por una búsqueda constante de la calidad y la eficiencia. Desde el diseño de sistemas backend de alto rendimiento hasta la creación de interfaces de usuario intuitivas, abordo cada proyecto con una mentalidad analítica y orientada a resultados.
+                Soy un entusiasta del Open Source y del aprendizaje constante.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Priorizo la escritura de código limpio, modular y mantenible, siguiendo las mejores prácticas de la industria. Valoro profundamente la colaboración técnica y creo que las mejores soluciones surgen de la comunicación clara y el trabajo en equipo.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Más allá del código, soy un entusiasta del aprendizaje continuo y el código abierto. Dedico tiempo a explorar tecnologías emergentes y a compartir conocimientos, contribuyendo activamente al crecimiento de la comunidad tecnológica.
+                Para mí, la tecnología no es solo una herramienta, es un medio para resolver problemas del mundo real de la manera más elegante y eficiente posible.
               </p>
             </div>
 
@@ -64,7 +61,8 @@ const About = () => {
           </div>
 
           {/* Highlights */}
-          <div className="grid grid-cols-1 gap-6">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold">Lo que aporto a cada proyecto:</h3>
             {highlights.map((highlight, index) => (
               <div
                 key={index}

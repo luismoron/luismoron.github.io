@@ -16,7 +16,7 @@ export const mockProfile: {
   email: "leonelmoron@gmail.com",
   phone: "+584241850752", // Reemplaza con tu número real de WhatsApp
   location: "Venezuela",
-  bio: "Desarrollador apasionado con experiencia en desarrollo web y móvil. Siempre buscando nuevas tecnologías y desafíos.",
+  bio: "Software Developer & Solutions Architect. > Especializado en construir arquitecturas escalables y automatización de alto impacto. Transformo desafíos técnicos complejos en productos digitales que destacan por su rendimiento, desde el núcleo del backend hasta la experiencia final del usuario.",
   github: "https://github.com/luismoron/",
   gitlab: "https://gitlab.com/luislmoron",
   linkedin: "https://www.linkedin.com/in/luis-morón-922711323",
