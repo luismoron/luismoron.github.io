@@ -17,22 +17,34 @@ export const mockProfile = {
   aboutHighlights: [
     {
       title: { es: "Arquitectura Moderna", en: "Modern Architecture" },
-      description: { es: "Orquestación con Podman y Docker para entornos ágiles", en: "Orchestration with Podman and Docker for agile environments" },
+      description: {
+        es: "Experiencia real en orquestación con Podman y Docker, garantizando entornos de despliegue ágiles y mantenibles.",
+        en: "Real-world experience in orchestration with Podman and Docker, ensuring agile and maintainable deployment environments."
+      },
       iconType: "Server"
     },
     {
       title: { es: "Eficiencia en Datos", en: "Data Efficiency" },
-      description: { es: "Diseño complejo en PostgreSQL y MongoDB", en: "Complex design in PostgreSQL and MongoDB" },
+      description: {
+        es: "Diseño de bases de datos complejas en PostgreSQL y MongoDB, priorizando siempre la integridad y la velocidad de respuesta.",
+        en: "Design of complex databases in PostgreSQL and MongoDB, always prioritizing integrity and response speed."
+      },
       iconType: "Database"
     },
     {
       title: { es: "Código con Propósito", en: "Purposeful Code" },
-      description: { es: "Clean Code, React y lógica de negocio en Go", en: "Clean Code, React, and business logic in Go" },
+      description: {
+        es: "Defensor del Clean Code y la modularidad. Desarrollo interfaces intuitivas en React y Iógicas de negocio potentes en Go.",
+        en: "Advocate for Clean Code and modularity. I develop intuitive interfaces in React and powerful business logic in Go."
+      },
       iconType: "Code"
     },
     {
       title: { es: "Mentalidad DevOps", en: "DevOps Mindset" },
-      description: { es: "Automatización con IA y CI/CD", en: "Automation with AI and CI/CD" },
+      description: {
+        es: "No solo desarrollo; optimizo procesos mediante automatización con IA y herramientas de integración continua.",
+        en: "I don't just develop; I optimize processes through AI automation and continuous integration tools."
+      },
       iconType: "Terminal"
     }
   ],
@@ -129,7 +141,7 @@ export const mockExperience = [
     id: 1,
     title: "Senior Full Stack Developer",
     company: "Tech Solutions Inc.",
-    period: "2022 - Presente", // "Presente" can be handled in UI or just kept as string. Let's make it bilingual string? Or just keep it. Let's make it bilingual.
+    period: "2022 - Presente",
     periodText: { es: "2022 - Presente", en: "2022 - Present" },
     description: {
       es: "Desarrollo de aplicaciones web y móviles usando React, Node.js y React Native.",
