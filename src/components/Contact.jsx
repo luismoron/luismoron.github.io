@@ -1,253 +1,171 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, GitlabIcon as Gitlab, Linkedin, CheckCircle } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Label } from '../components/ui/label';
-import { useToast } from '../hooks/use-toast';
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../data/translations';
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Crear mensaje para WhatsApp
-    const message = `Hola Luis, soy ${formData.name}.\n\n${formData.message}\n\nEmail: ${formData.email}\nAsunto: ${formData.subject}`;
+    // Simular envío
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
-    // Número de WhatsApp (remover + y espacios)
-    const whatsappNumber = mockProfile.phone.replace(/\+/g, '').replace(/\s/g, '');
-
-    // Crear enlace de WhatsApp
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    // Abrir WhatsApp
-    window.open(whatsappUrl, '_blank');
-
-    toast({
-      title: "Abriendo WhatsApp...",
-      description: "Se abrirá WhatsApp con tu mensaje pre-llenado.",
-      duration: 3000,
-    });
-
-    setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
+    setIsSuccess(true);
+    setFormData({ name: '', email: '', message: '' });
+
+    setTimeout(() => setIsSuccess(false), 3000);
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail className="w-5 h-5" />,
-      label: "Email",
-      value: mockProfile.email,
-      href: `mailto:${mockProfile.email}`
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Teléfono",
-      value: mockProfile.phone,
-      href: `tel:${mockProfile.phone}`
-    },
-    {
-      icon: <MapPin className="w-5 h-5" />,
-      label: "Ubicación",
-      value: mockProfile.location,
-      href: null
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: <Github className="w-5 h-5" />,
-      label: "GitHub",
-      href: mockProfile.github,
-      color: "hover:text-gray-900 dark:hover:text-gray-100"
-    },
-    {
-      icon: <Gitlab className="w-5 h-5" />,
-      label: "GitLab",
-      href: mockProfile.gitlab,
-      color: "hover:text-orange-600"
-    },
-    {
-      icon: <Linkedin className="w-5 h-5" />,
-      label: "LinkedIn",
-      href: mockProfile.linkedin,
-      color: "hover:text-blue-600"
-    }
-  ];
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
 
   return (
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            {t.title}
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
-            Contacta conmigo y hablemos sobre cómo puedo ayudarte.
+            {t.description}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Información de Contacto</h3>
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="p-3 bg-primary/10 rounded-full text-primary">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <p className="font-medium">{info.label}</p>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{info.value}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Sígueme</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 bg-card border rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg ${social.color}`}
-                    title={social.label}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Availability */}
-            <div className="p-6 bg-card rounded-lg border">
-              <div className="flex items-center space-x-2 mb-2">
-                <CheckCircle className="w-5 h-5 text-blue-500" />
-                <h3 className="font-semibold">Disponible para proyectos</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Actualmente estoy disponible para nuevos proyectos y colaboraciones.
-                No dudes en contactarme si tienes algo interesante en mente.
+            <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
+              <h3 className="text-2xl font-bold mb-6">{t.available}</h3>
+              <p className="text-muted-foreground mb-8">
+                {t.availabilityText}
               </p>
+
+              <div className="space-y-6">
+                <a href={`mailto:${mockProfile.email}`} className="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group">
+                  <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
+                    <Mail className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">{t.email}</p>
+                    <p className="font-medium text-lg">{mockProfile.email}</p>
+                  </div>
+                </a>
+
+                <a href={`https://wa.me/${mockProfile.phone.replace('+', '')}`} className="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group">
+                  <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">{t.call}</p>
+                    <p className="font-medium text-lg">{mockProfile.phone}</p>
+                  </div>
+                </a>
+
+                <div className="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group">
+                  <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">{t.location}</p>
+                    <p className="font-medium text-lg">{mockProfile.location}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center p-6 bg-blue-500/10 rounded-xl border border-blue-500/20 text-blue-500">
+              <div className="relative flex h-3 w-3 mr-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+              </div>
+              <span className="font-medium">{t.available}</span>
             </div>
           </div>
 
           {/* Contact Form */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Envíame un mensaje</CardTitle>
-              <CardDescription>
-                Completa el formulario y se abrirá WhatsApp con tu mensaje pre-llenado
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nombre</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Tu nombre"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="tu@email.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
+          <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">{t.form.name}</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                  placeholder="John Doe"
+                />
+              </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Asunto</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    placeholder="Sobre qué quieres hablar"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">{t.form.email}</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                  placeholder="john@example.com"
+                />
+              </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="message">Mensaje</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Cuéntame sobre tu proyecto o idea..."
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">{t.form.message}</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="4"
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none"
+                  placeholder={language === 'es' ? "Hola, me gustaría hablar sobre..." : "Hi, I'd like to discuss..."}
+                ></textarea>
+              </div>
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full flex items-center justify-center space-x-2"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-foreground"></div>
-                      <span>Abriendo WhatsApp...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Enviar por WhatsApp</span>
-                    </>
-                  )}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+              <button
+                type="submit"
+                disabled={isSubmitting || isSuccess}
+                className={`w-full py-4 rounded-xl font-bold text-white transition-all duration-300 flex items-center justify-center space-x-2 ${isSuccess
+                    ? 'bg-gradient-to-r from-green-500 to-emerald-600 shadow-lg'
+                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl'
+                  } ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+              >
+                {isSuccess ? (
+                  <>
+                    <CheckCircle2 className="w-5 h-5" />
+                    <span>{t.form.success}</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>{isSubmitting ? t.form.sending : t.form.send}</span>
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

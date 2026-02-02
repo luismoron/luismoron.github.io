@@ -1,8 +1,13 @@
 import React from 'react';
 import { ArrowDown, MapPin, Mail } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../data/translations';
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
   const scrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
@@ -29,7 +34,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-            {mockProfile.title}
+            {mockProfile.title[language]}
           </p>
 
           {/* Info */}
@@ -46,7 +51,7 @@ const Hero = () => {
 
           {/* Bio */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            {mockProfile.bio}
+            {mockProfile.bio[language]}
           </p>
 
           {/* CTA Button */}
@@ -54,7 +59,7 @@ const Hero = () => {
             onClick={scrollToAbout}
             className="group inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            <span>Conoce más sobre mí</span>
+            <span>{t.cta}</span>
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
           </button>
         </div>

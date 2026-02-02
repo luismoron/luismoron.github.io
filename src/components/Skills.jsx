@@ -2,8 +2,13 @@ import React from 'react';
 import { Progress } from '../components/ui/progress';
 import { Badge } from '../components/ui/badge';
 import { mockSkills } from '../data/mockData';
+import { Button } from "@/components/ui/button";
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../data/translations';
 
 const Skills = () => {
+  const { language } = useLanguage();
+  const t = translations[language].skills;
   const topSkills = mockSkills.slice(0, 6);
   const allSkills = mockSkills.map(skill => skill.name);
 
@@ -11,10 +16,11 @@ const Skills = () => {
     <section id="skills" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Habilidades</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            {t.title}
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Tecnologías y herramientas que utilizo en mi día a día, constantemente actualizadas
-            basándose en mis proyectos de GitHub y GitLab.
+            {t.description}
           </p>
         </div>
 
