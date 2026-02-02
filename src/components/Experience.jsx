@@ -9,9 +9,9 @@ const Experience = () => {
     <section id="experience" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Experiencia</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Experiencia</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Mi trayectoria profesional en el desarrollo de software, combinando experiencia 
+            Mi trayectoria profesional en el desarrollo de software, combinando experiencia
             técnica con liderazgo y trabajo en equipo.
           </p>
         </div>
@@ -20,12 +20,12 @@ const Experience = () => {
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:transform md:-translate-x-0.5"></div>
-            
+
             {mockExperience.map((experience, index) => (
               <div key={experience.id} className="relative mb-8 md:mb-12">
                 {/* Timeline dot */}
                 <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background md:left-1/2 md:transform md:-translate-x-1/2"></div>
-                
+
                 {/* Content */}
                 <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:ml-auto md:pl-8'}`}>
                   <Card className="hover:shadow-lg transition-shadow">

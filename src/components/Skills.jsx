@@ -11,9 +11,9 @@ const Skills = () => {
     <section id="skills" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Habilidades</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Habilidades</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Tecnologías y herramientas que utilizo en mi día a día, constantemente actualizadas 
+            Tecnologías y herramientas que utilizo en mi día a día, constantemente actualizadas
             basándose en mis proyectos de GitHub y GitLab.
           </p>
         </div>
@@ -53,7 +53,7 @@ const Skills = () => {
         {/* Note about automatic detection */}
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground bg-card p-4 rounded-lg border inline-block">
-            💡 <strong>Datos automáticos:</strong> Estas habilidades son detectadas automáticamente 
+            💡 <strong>Datos automáticos:</strong> Estas habilidades son detectadas automáticamente
             analizando los lenguajes y tecnologías utilizadas en mis repositorios de GitHub y GitLab.
           </p>
         </div>

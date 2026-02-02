@@ -1,45 +1,62 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ThemeContext = createContext();
+// Estado global singleton para compartir entre islas de Astro
+let globalTheme = 'light';
+const listeners = new Set();
 
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    // Return a default theme for SSR
-    return { theme: 'light', toggleTheme: () => {} };
+// Función auxiliar para inicializar el tema
+const initTheme = () => {
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      globalTheme = savedTheme;
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      globalTheme = 'dark';
+    }
+    document.documentElement.className = globalTheme;
   }
-  return context;
 };
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
+// Ejecutar inicialización inmediatamente
+initTheme();
+
+const setThemeGlobal = (newTheme) => {
+  globalTheme = newTheme;
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.className = newTheme;
+  }
+  listeners.forEach(listener => listener(newTheme));
+};
+
+export const useTheme = () => {
+  const [theme, setLocalTheme] = useState(globalTheme);
 
   useEffect(() => {
-    // Check if we're on the client side
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        setTheme(savedTheme);
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTheme('dark');
-      }
-    }
+    // Sincronizar estado local al montar
+    setLocalTheme(globalTheme);
+
+    const listener = (newTheme) => setLocalTheme(newTheme);
+    listeners.add(listener);
+
+    return () => {
+      listeners.delete(listener);
+    };
   }, []);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', theme);
-      document.documentElement.className = theme;
-    }
-  }, [theme]);
-
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setThemeGlobal(theme === 'light' ? 'dark' : 'light');
   };
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return { theme, toggleTheme };
+};
+
+// Componente "Pass-through" para mantener compatibilidad si se usa como wrapper
+export const ThemeProvider = ({ children }) => {
+  // Asegurar que el tema esté inicializado en el cliente también
+  useEffect(() => {
+    initTheme();
+  }, []);
+
+  return <>{children}</>;
 };

@@ -31,22 +31,22 @@ const Contact = () => {
 
     // Crear mensaje para WhatsApp
     const message = `Hola Luis, soy ${formData.name}.\n\n${formData.message}\n\nEmail: ${formData.email}\nAsunto: ${formData.subject}`;
-    
+
     // Número de WhatsApp (remover + y espacios)
     const whatsappNumber = mockProfile.phone.replace(/\+/g, '').replace(/\s/g, '');
-    
+
     // Crear enlace de WhatsApp
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    
+
     // Abrir WhatsApp
     window.open(whatsappUrl, '_blank');
-    
+
     toast({
       title: "Abriendo WhatsApp...",
       description: "Se abrirá WhatsApp con tu mensaje pre-llenado.",
       duration: 3000,
     });
-    
+
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
@@ -99,7 +99,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contacto</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él. 
+            ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
             Contacta conmigo y hablemos sobre cómo puedo ayudarte.
           </p>
         </div>
@@ -155,11 +155,11 @@ const Contact = () => {
             {/* Availability */}
             <div className="p-6 bg-card rounded-lg border">
               <div className="flex items-center space-x-2 mb-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
+                <CheckCircle className="w-5 h-5 text-blue-500" />
                 <h3 className="font-semibold">Disponible para proyectos</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Actualmente estoy disponible para nuevos proyectos y colaboraciones. 
+                Actualmente estoy disponible para nuevos proyectos y colaboraciones.
                 No dudes en contactarme si tienes algo interesante en mente.
               </p>
             </div>

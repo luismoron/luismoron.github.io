@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import { Moon, Sun, Menu, X, Download, Github, GitlabIcon as Gitlab } from 'lucide-react';
+import { Moon, Sun, Menu, X, Github, GitlabIcon as Gitlab } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
 
 const Header = ({ activeSection, setActiveSection }) => {
@@ -25,16 +25,7 @@ const Header = ({ activeSection, setActiveSection }) => {
     setIsMenuOpen(false);
   };
 
-  const downloadCV = () => {
-    // Crear un enlace temporal para descargar el PDF estático
-    const link = document.createElement('a');
-    link.href = '/CV_Luis_Moron.pdf';
-    link.download = 'CV_Luis_Moron.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -42,10 +33,10 @@ const Header = ({ activeSection, setActiveSection }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-emerald-700 from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-primary-foreground font-bold text-sm">LM</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-sm">LM</span>
             </div>
-            <span className="font-bold text-lg bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Luis Morón</span>
+            <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Luis Morón</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -54,9 +45,8 @@ const Header = ({ activeSection, setActiveSection }) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  activeSection === item.id ? 'text-primary' : 'text-muted-foreground'
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary ${activeSection === item.id ? 'text-primary' : 'text-muted-foreground'
+                  }`}
               >
                 {item.label}
               </button>
@@ -85,14 +75,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               </a>
             </div>
 
-            {/* Download CV */}
-            <button
-              onClick={downloadCV}
-              className="hidden md:flex items-center space-x-2 px-4 py-2 bg-emerald-700 from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              <Download className="w-4 h-4" />
-              <span>CV</span>
-            </button>
+
 
             {/* Theme Toggle */}
             <button
@@ -120,20 +103,13 @@ const Header = ({ activeSection, setActiveSection }) => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left py-2 px-4 rounded-lg transition-colors hover:bg-accent ${
-                    activeSection === item.id ? 'text-primary bg-accent' : 'text-muted-foreground'
-                  }`}
+                  className={`text-left py-2 px-4 rounded-lg transition-colors hover:bg-accent ${activeSection === item.id ? 'text-primary bg-accent' : 'text-muted-foreground'
+                    }`}
                 >
                   {item.label}
                 </button>
               ))}
-              <button
-                onClick={downloadCV}
-                className="flex items-center space-x-2 py-2 px-4 bg-emerald-700 from-primary to-secondary text-primary-foreground rounded-lg hover:from-primary/90 hover:to-secondary/90 transition-all duration-300 transform hover:scale-105 shadow-lg mt-2"
-              >
-                <Download className="w-4 h-4" />
-                <span>Descargar CV</span>
-              </button>
+
             </div>
           </nav>
         )}

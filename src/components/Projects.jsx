@@ -10,7 +10,7 @@ const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   const allTechs = [...new Set(mockProjects.flatMap(project => project.tech))];
-  
+
   const filteredProjects = mockProjects.filter(project => {
     if (filter === 'all') return true;
     if (filter === 'featured') return project.featured;
@@ -23,9 +23,9 @@ const Projects = () => {
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">Proyectos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Proyectos</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Una selección de proyectos que he desarrollado, obtenidos automáticamente de mis 
+            Una selección de proyectos que he desarrollado, obtenidos automáticamente de mis
             repositorios de GitHub y GitLab.
           </p>
         </div>
@@ -36,7 +36,7 @@ const Projects = () => {
             variant={filter === 'all' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('all')}
-            className={`flex items-center space-x-2 ${filter === 'all' ? 'bg-emerald-700 from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
+            className={`flex items-center space-x-2 ${filter === 'all' ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700' : ''}`}
           >
             <Filter className="w-4 h-4" />
             <span>Todos</span>
@@ -45,7 +45,7 @@ const Projects = () => {
             variant={filter === 'featured' ? 'default' : 'outline'}
             size="sm"
             onClick={() => setFilter('featured')}
-            className={`flex items-center space-x-2 ${filter === 'featured' ? 'bg-emerald-700 from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}`}
+            className={`flex items-center space-x-2 ${filter === 'featured' ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700' : ''}`}
           >
             <Star className="w-4 h-4" />
             <span>Destacados</span>
@@ -56,7 +56,7 @@ const Projects = () => {
               variant={filter === tech ? 'default' : 'outline'}
               size="sm"
               onClick={() => setFilter(tech)}
-              className={filter === tech ? 'bg-emerald-700 from-primary to-secondary hover:from-primary/90 hover:to-secondary/90' : ''}
+              className={filter === tech ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700' : ''}
             >
               {tech}
             </Button>
@@ -82,7 +82,7 @@ const Projects = () => {
                   </div>
                 )}
               </div>
-              
+
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>{project.name}</span>
@@ -109,7 +109,7 @@ const Projects = () => {
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
-              
+
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, index) => (
@@ -139,7 +139,7 @@ const Projects = () => {
         {/* Auto-sync Note */}
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground bg-card p-4 rounded-lg border inline-block">
-            🔄 <strong>Sincronización automática:</strong> Los proyectos se actualizan automáticamente 
+            🔄 <strong>Sincronización automática:</strong> Los proyectos se actualizan automáticamente
             desde mis repositorios de GitHub y GitLab cada 24 horas.
           </p>
         </div>

@@ -31,7 +31,7 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4  from-primary to-secondary bg-clip-text text-transparent">Acerca de Mí</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ingeniero de Software enfocado en la excelencia técnica y la innovación. Transformo ideas complejas en soluciones digitales robustas, especializándome en arquitecturas escalables tanto para web como para móvil. Mi objetivo es crear software que no solo funcione, sino que destaque por su rendimiento y experiencia de usuario.
+            Programador de Software enfocado en la excelencia técnica y la innovación. Transformo ideas complejas en soluciones digitales robustas, especializándome en arquitecturas escalables tanto para web como para móvil. Mi objetivo es crear software que no solo funcione, sino que destaque por su rendimiento y experiencia de usuario.
           </p>
         </div>
 
@@ -53,11 +53,11 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 pt-6">
               <div className="text-center p-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg border border-primary/10">
-                <div className="text-2xl font-bold bg-emerald-700 from-primary to-secondary bg-clip-text text-transparent">50+</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">50+</div>
                 <div className="text-sm text-muted-foreground">Proyectos Completados</div>
               </div>
               <div className="text-center p-4 bg-gradient-to-br from-secondary/5 to-primary/5 rounded-lg border border-secondary/10">
-                <div className="text-2xl font-bold bg-emerald-700 from-secondary to-primary bg-clip-text text-transparent">5+</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">5+</div>
                 <div className="text-sm text-muted-foreground">Años de Experiencia</div>
               </div>
             </div>

@@ -1,0 +1,21 @@
+import{j as e}from"./jsx-runtime.D_zvdyIk.js";import{r as h}from"./index.Bf1nT9TB.js";import{u as p}from"./ThemeContext.BA2jtqU_.js";import{m as i}from"./mockData.CfnVXer4.js";import{G as b}from"./github.Asy4IJ8Z.js";import{G as u}from"./gitlab.CcJYd4_O.js";import{c as s}from"./createLucideIcon.DUq1gWfX.js";/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const f=s("Menu",[["line",{x1:"4",x2:"20",y1:"12",y2:"12",key:"1e0a9i"}],["line",{x1:"4",x2:"20",y1:"6",y2:"6",key:"1owob3"}],["line",{x1:"4",x2:"20",y1:"18",y2:"18",key:"yk5zj1"}]]);/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=s("Moon",[["path",{d:"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z",key:"a7tn18"}]]);/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const j=s("Sun",[["circle",{cx:"12",cy:"12",r:"4",key:"4exip2"}],["path",{d:"M12 2v2",key:"tus03m"}],["path",{d:"M12 20v2",key:"1lh1kg"}],["path",{d:"m4.93 4.93 1.41 1.41",key:"149t6j"}],["path",{d:"m17.66 17.66 1.41 1.41",key:"ptbguv"}],["path",{d:"M2 12h2",key:"1t8f8n"}],["path",{d:"M20 12h2",key:"1q8mjw"}],["path",{d:"m6.34 17.66-1.41 1.41",key:"1m8zz5"}],["path",{d:"m19.07 4.93-1.41 1.41",key:"1shlcs"}]]);/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const g=s("X",[["path",{d:"M18 6 6 18",key:"1bl5f8"}],["path",{d:"m6 6 12 12",key:"d8bk6v"}]]),z=({activeSection:r,setActiveSection:d})=>{const{theme:m,toggleTheme:x}=p(),[a,o]=h.useState(!1),l=[{id:"home",label:"Inicio"},{id:"about",label:"Acerca de"},{id:"skills",label:"Habilidades"},{id:"projects",label:"Proyectos"},{id:"experience",label:"Experiencia"},{id:"contact",label:"Contacto"}],n=t=>{const c=document.getElementById(t);c&&c.scrollIntoView({behavior:"smooth"}),d(t),o(!1)};return e.jsx("header",{className:"fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border",children:e.jsxs("div",{className:"container mx-auto px-4 py-3",children:[e.jsxs("div",{className:"flex items-center justify-between",children:[e.jsxs("div",{className:"flex items-center space-x-2",children:[e.jsx("div",{className:"w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg",children:e.jsx("span",{className:"text-white font-bold text-sm",children:"LM"})}),e.jsx("span",{className:"font-bold text-lg bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent",children:"Luis Morón"})]}),e.jsx("nav",{className:"hidden md:flex items-center space-x-8",children:l.map(t=>e.jsx("button",{onClick:()=>n(t.id),className:`text-sm font-medium transition-colors hover:text-primary ${r===t.id?"text-primary":"text-muted-foreground"}`,children:t.label},t.id))}),e.jsxs("div",{className:"flex items-center space-x-2",children:[e.jsxs("div",{className:"hidden md:flex items-center space-x-2",children:[e.jsx("a",{href:i.github,target:"_blank",rel:"noopener noreferrer",className:"p-2 rounded-full hover:bg-accent transition-colors",children:e.jsx(b,{className:"w-4 h-4"})}),e.jsx("a",{href:i.gitlab,target:"_blank",rel:"noopener noreferrer",className:"p-2 rounded-full hover:bg-accent transition-colors",children:e.jsx(u,{className:"w-4 h-4"})})]}),e.jsx("button",{onClick:x,className:"p-2 rounded-full hover:bg-accent transition-colors",children:m==="light"?e.jsx(y,{className:"w-4 h-4"}):e.jsx(j,{className:"w-4 h-4"})}),e.jsx("button",{onClick:()=>o(!a),className:"md:hidden p-2 rounded-full hover:bg-accent transition-colors",children:a?e.jsx(g,{className:"w-4 h-4"}):e.jsx(f,{className:"w-4 h-4"})})]})]}),a&&e.jsx("nav",{className:"md:hidden mt-4 pb-4 border-t border-border",children:e.jsx("div",{className:"flex flex-col space-y-2 mt-4",children:l.map(t=>e.jsx("button",{onClick:()=>n(t.id),className:`text-left py-2 px-4 rounded-lg transition-colors hover:bg-accent ${r===t.id?"text-primary bg-accent":"text-muted-foreground"}`,children:t.label},t.id))})})]})})};export{z as default};
