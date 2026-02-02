@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, GitlabIcon as Gitlab, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Github, GitlabIcon as Gitlab, Linkedin, Mail, ArrowUp, Code } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
 
 const Footer = () => {
@@ -43,7 +43,7 @@ const Footer = () => {
               <span className="font-bold text-lg">{mockProfile.name}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Desarrollador Full Stack especializado en crear experiencias digitales 
+              Desarrollador Full Stack especializado en crear experiencias digitales
               excepcionales con tecnologías modernas.
             </p>
           </div>
@@ -98,10 +98,10 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © 2024 {mockProfile.name}. Todos los derechos reservados.
             </p>
-            
+
             <div className="flex items-center space-x-4">
               <p className="text-xs text-muted-foreground">
-                Desarrollado con ❤️ usando React & FastAPI
+                Desarrollado con <Code className="w-3 h-3 inline mx-1 text-primary" /> usando Astro, React & Tailwind
               </p>
               <button
                 onClick={scrollToTop}
