@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
@@ -8,9 +8,14 @@ import { mockProfile } from '../data/mockData';
 const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const t = translations[language].nav;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Actualizar la sección activa al hacer scroll
   React.useEffect(() => {
@@ -118,7 +123,7 @@ const Header = () => {
               onClick={toggleTheme}
               className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {mounted && (theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
             </button>
           </div>
 
@@ -134,7 +139,7 @@ const Header = () => {
               onClick={toggleTheme}
               className="p-2 text-muted-foreground hover:text-foreground rounded-lg"
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {mounted && (theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

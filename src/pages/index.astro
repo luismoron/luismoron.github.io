@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { ThemeProvider } from '../contexts/ThemeContext';
+
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -34,19 +34,17 @@ import Footer from '../components/Footer';
     </script>
   </head>
   <body>
-    <ThemeProvider client:load>
-      <div class="App">
-        <Header client:load />
-        <main>
-          <Hero client:load />
-          <About client:visible />
-          <Skills client:visible />
-          <Projects client:visible />
-          <Experience client:visible />
-          <Contact client:visible />
-        </main>
-        <Footer client:load />
-      </div>
-    </ThemeProvider>
+    <div class="App">
+      <Header client:load />
+      <main>
+        <Hero client:load />
+        <About client:visible />
+        <Skills client:visible />
+        <Projects client:visible />
+        <Experience client:visible />
+        <Contact client:visible />
+      </main>
+      <Footer client:load />
+    </div>
   </body>
 </html>

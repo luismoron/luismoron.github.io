@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../data/translations';
@@ -7,34 +7,8 @@ import { translations } from '../data/translations';
 const Contact = () => {
   const { language } = useLanguage();
   const t = translations[language].contact;
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simular envío
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({ name: '', email: '', message: '' });
-
-    setTimeout(() => setIsSuccess(false), 3000);
-  };
-
-  const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
+  const whatsappLink = `https://wa.me/${mockProfile.phone.replace('+', '')}`;
 
   return (
     <section id="contact" className="py-20 px-4">
@@ -68,7 +42,7 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href={`https://wa.me/${mockProfile.phone.replace('+', '')}`} className="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group">
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group">
                   <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
                     <Phone className="w-6 h-6" />
                   </div>
@@ -99,72 +73,30 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">{t.form.name}</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
-                  placeholder="John Doe"
-                />
-              </div>
+          {/* WhatsApp Direct Action */}
+          <div className="bg-card p-8 rounded-2xl border border-border shadow-lg flex flex-col items-center justify-center text-center space-y-8">
+            <div className="p-6 bg-green-500/10 rounded-full">
+              <Phone className="w-16 h-16 text-green-500" />
+            </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">{t.form.email}</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
-                  placeholder="john@example.com"
-                />
-              </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">{t.form.send}</h3>
+              <p className="text-muted-foreground max-w-sm mx-auto">
+                {language === 'es'
+                  ? "Hablemos directamente por WhatsApp para una respuesta más rápida."
+                  : "Let's chat directly on WhatsApp for a faster response."}
+              </p>
+            </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">{t.form.message}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="4"
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-input focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none"
-                  placeholder={language === 'es' ? "Hola, me gustaría hablar sobre..." : "Hi, I'd like to discuss..."}
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting || isSuccess}
-                className={`w-full py-4 rounded-xl font-bold text-white transition-all duration-300 flex items-center justify-center space-x-2 ${isSuccess
-                    ? 'bg-gradient-to-r from-green-500 to-emerald-600 shadow-lg'
-                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl'
-                  } ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
-              >
-                {isSuccess ? (
-                  <>
-                    <CheckCircle2 className="w-5 h-5" />
-                    <span>{t.form.success}</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>{isSubmitting ? t.form.sending : t.form.send}</span>
-                  </>
-                )}
-              </button>
-            </form>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              <Send className="w-6 h-6" />
+              <span>WhatsApp</span>
+            </a>
           </div>
         </div>
       </div>
