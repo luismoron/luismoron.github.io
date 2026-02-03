@@ -5,11 +5,34 @@ import { translations } from '../data/translations';
 import { Moon, Sun, Menu, X, Github, GitlabIcon as Gitlab, Languages } from 'lucide-react';
 import { mockProfile } from '../data/mockData';
 
-const Header = ({ activeSection, setActiveSection }) => {
+const Header = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const t = translations[language].nav;
+
+  // Actualizar la sección activa al hacer scroll
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset para el header
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = [
     { id: 'home', label: t.home },
@@ -48,8 +71,8 @@ const Header = ({ activeSection, setActiveSection }) => {
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === item.id
-                    ? 'text-primary bg-primary/10 font-semibold'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                  ? 'text-primary bg-primary/10 font-semibold'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
                   }`}
               >
                 {item.label}
@@ -131,8 +154,8 @@ const Header = ({ activeSection, setActiveSection }) => {
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
                   className={`px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${activeSection === item.id
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'
                     }`}
                 >
                   {item.label}
