@@ -24,6 +24,14 @@ import Footer from '../components/Footer';
     <meta property="og:url" content="https://luismoron.github.io" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Luis Morón - Portfolio</title>
+    <script is:inline>
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const theme = savedTheme || systemTheme;
+        document.documentElement.className = theme;
+      })();
+    </script>
   </head>
   <body>
     <ThemeProvider client:load>
