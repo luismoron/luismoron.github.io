@@ -1,66 +1,74 @@
 // Mock data para el portafolio
 // Traducciones integradas para ES/EN
 
+const startYear = 2006;
+const currentYear = new Date().getFullYear();
+export const yearsOfExperience = currentYear - startYear;
+
 export const mockProfile = {
   name: "Luis Morón",
   title: {
-    es: "Desarrollador de Software",
-    en: "Software Developer"
+    es: "Software Developer & IA Architect",
+    en: "Software Developer & AI Architect"
   },
   email: "leonelmoron@gmail.com",
   phone: "+584241850752",
   location: "Venezuela",
   bio: {
-    es: "Software Developer & Solutions Architect. > Especializado en construir arquitecturas escalables y automatización de alto impacto. Transformo desafíos técnicos complejos en productos digitales que destacan por su rendimiento, desde el núcleo del backend hasta la experiencia final del usuario.",
-    en: "Software Developer & Solutions Architect. > Specialized in building scalable architectures and high-impact automation. I transform complex technical challenges into digital products that stand out for their performance, from the backend core to the final user experience."
+    es: "Software Developer & Solutions Architect. > Especializado en sistemas de alta disponibilidad con Go e Inteligencia Artificial generativa. Transformo la complejidad técnica en motores de backend eficientes y automatizaciones de impacto real.",
+    en: "Software Developer & Solutions Architect. > Specialized in high-availability systems with Go and Generative AI. I transform technical complexity into efficient backend engines and real-impact automations."
   },
   aboutHighlights: [
     {
-      title: { es: "Arquitectura Moderna", en: "Modern Architecture" },
+      title: { es: "Backend con Go", en: "Backend with Go" },
       description: {
-        es: "Experiencia real en orquestación con Podman y Docker, garantizando entornos de despliegue ágiles y mantenibles.",
-        en: "Real-world experience in orchestration with Podman and Docker, ensuring agile and maintainable deployment environments."
+        es: "Desarrollo de motores de procesamiento de alto rendimiento usando Golang y Protobuf para una eficiencia brutal.",
+        en: "Development of high-performance processing engines using Golang and Protobuf for brutal efficiency."
       },
       iconType: "Server"
     },
     {
-      title: { es: "Eficiencia en Datos", en: "Data Efficiency" },
+      title: { es: "Arquitectura IA", en: "AI Architecture" },
       description: {
-        es: "Diseño de bases de datos complejas en PostgreSQL y MongoDB, priorizando siempre la integridad y la velocidad de respuesta.",
-        en: "Design of complex databases in PostgreSQL and MongoDB, always prioritizing integrity and response speed."
+        es: "Integración de Gemini 1.5 Flash para interpretación de lenguaje natural y toma de decisiones autónoma.",
+        en: "Integration of Gemini 1.5 Flash for natural language interpretation and autonomous decision making."
       },
-      iconType: "Database"
+      iconType: "Cpu"
     },
     {
-      title: { es: "Código con Propósito", en: "Purposeful Code" },
+      title: { es: "Infraestructura Segura", en: "Secure Infrastructure" },
       description: {
-        es: "Defensor del Clean Code y la modularidad. Desarrollo interfaces intuitivas en React y Iógicas de negocio potentes en Go.",
-        en: "Advocate for Clean Code and modularity. I develop intuitive interfaces in React and powerful business logic in Go."
-      },
-      iconType: "Code"
-    },
-    {
-      title: { es: "Mentalidad DevOps", en: "DevOps Mindset" },
-      description: {
-        es: "No solo desarrollo; optimizo procesos mediante automatización con IA y herramientas de integración continua.",
-        en: "I don't just develop; I optimize processes through AI automation and continuous integration tools."
+        es: "Orquestación con Docker, Redis y redes privadas ZeroTier para entornos de producción blindados.",
+        en: "Orchestration with Docker, Redis, and ZeroTier private networks for shielded production environments."
       },
       iconType: "Terminal"
+    },
+    {
+      title: { es: "Datos en Tiempo Real", en: "Real-time Data" },
+      description: {
+        es: "Gestión de estados complejos con Redis y persistencia robusta en PostgreSQL (Hasura) y MongoDB.",
+        en: "Complex state management with Redis and robust persistence in PostgreSQL (Hasura) and MongoDB."
+      },
+      iconType: "Database"
     }
   ],
   aboutText: {
+    title: {
+      es: `${yearsOfExperience} años construyendo el futuro digital`,
+      en: `${yearsOfExperience} years building the digital future`
+    },
     intro: {
-      es: "Mi enfoque va más allá de escribir código; se trata de ingeniería de precisión. Creo firmemente que una solución robusta nace de la combinación entre un backend sólido y una infraestructura moderna.",
-      en: "My approach goes beyond writing code; it's about precision engineering. I firmly believe that a robust solution is born from the combination of a solid backend and modern infrastructure."
+      es: "Mi viaje comenzó en 2006. Desde entonces, he evolucionado de la web artesanal a la construcción de ecosistemas donde la IA y el código de bajo nivel convergen. Mi carrera se define por la independencia como freelancer y la creación de soluciones propietarias disruptivas.",
+      en: "My journey began in 2006. Since then, I've evolved from the artisanal web to building ecosystems where AI and low-level code converge. My career is defined by independence as a freelancer and the creation of disruptive proprietary solutions."
     },
     body: [
       {
-        es: "Soy un entusiasta del Open Source y del aprendizaje constante.",
-        en: "I am an Open Source enthusiast and a lifelong learner."
+        es: "Dominio técnico extremo: Desde macros VBA que gestionan flujos masivos de procesos hasta bots en Go que hablan binario con WhatsApp directamente vía Whatsmeow.",
+        en: "Extreme technical domain: From VBA macros managing complex operational flows to Go bots that speak binary with WhatsApp directly via Whatsmeow."
       },
       {
-        es: "Para mí, la tecnología no es solo una herramienta, es un medio para resolver problemas del mundo real de la manera más elegante y eficiente posible.",
-        en: "For me, technology is not just a tool, it's a means to solve real-world problems in the most elegant and efficient way possible."
+        es: "Actualmente enfocado en el escalado de Corredor y la infraestructura inmobiliaria de Kasa, utilizando arquitecturas en el edge y orquestación de IA.",
+        en: "Currently focused on scaling Corredor and Kasa's infrastructure, using edge architectures and AI orchestration."
       }
     ]
   },
@@ -71,103 +79,169 @@ export const mockProfile = {
 };
 
 export const mockSkills = [
-  { name: "JavaScript", level: 90, projects: 15 },
-  { name: "React", level: 85, projects: 12 },
-  { name: "Node.js", level: 80, projects: 10 },
-  { name: "Python", level: 75, projects: 8 },
-  { name: "MongoDB", level: 70, projects: 6 },
-  { name: "React Native", level: 65, projects: 4 },
-  { name: "Docker", level: 60, projects: 5 },
-  { name: "AWS", level: 55, projects: 3 }
+  { name: "Go (Golang)", level: 90, projects: 10 },
+  { name: "Gemini AI", level: 85, projects: 5 },
+  { name: "PostgreSQL", level: 85, projects: 12 },
+  { name: "Redis", level: 80, projects: 8 },
+  { name: "Protobuf", level: 75, projects: 6 },
+  { name: "Docker", level: 80, projects: 15 },
+  { name: "MongoDB", level: 75, projects: 8 },
+  { name: "Astro", level: 85, projects: 4 },
+  { name: "Whatsmeow", level: 90, projects: 6 }
 ];
 
 export const mockProjects = [
   {
     id: 1,
+    name: "Corredor",
+    description: {
+      es: "Motor de automatización impulsado por IA. Orquestación en Go, comunicación binaria nativa y Gemini 1.5 Flash para procesamiento de lenguaje natural.",
+      en: "AI-driven automation engine. Go orchestration, native binary communication, and Gemini 1.5 Flash for natural language processing."
+    },
+    tech: ["Go", "Gemini AI", "Redis", "Protobuf"],
+    github: "https://github.com/luismoron/",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80",
+    featured: true,
+    era: "era-modern"
+  },
+  {
+    id: 2,
+    name: "Kasa (BaaS Architecture)",
+    description: {
+      es: "Arquitectura Backend-as-a-Service escalable. PostgreSQL 15+ con seguridad RLS, API automatizada, tiempo real y orquestación vía API Gateway.",
+      en: "Scalable Backend-as-a-Service architecture. PostgreSQL 15+ with RLS security, automated API, real-time, and API Gateway orchestration."
+    },
+    tech: ["PostgreSQL", "PostgREST", "Kong", "Elixir"],
+    github: "https://github.com/luismoron/",
+    demo: null,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+    featured: true,
+    era: "era-modern"
+  },
+  {
+    id: 3,
     name: "Dotfiles",
     description: {
-      es: "Configuración personal de entorno de desarrollo con scripts y herramientas",
-      en: "Personal development environment configuration with scripts and tools"
+      es: "Configuración personal de entorno de desarrollo con scripts y herramientas avanzadas.",
+      en: "Personal development environment configuration with scripts and advanced tools."
     },
     tech: ["Shell", "Linux", "Git"],
     github: "https://github.com/luismoron/dotfiles",
     demo: null,
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-    featured: true
+    featured: false,
+    era: "era-modern"
   },
   {
-    id: 2,
+    id: 4,
     name: "CLI Tool",
     description: {
-      es: "Script principal de control para configuración de dotfiles Caelestia",
-      en: "Main control script for Caelestia dotfiles configuration"
+      es: "Herramienta de línea de comandos para automatización de flujos de trabajo en sistemas Linux.",
+      en: "Command-line tool for workflow automation in Linux systems."
     },
     tech: ["Python", "Shell"],
     github: "https://github.com/luismoron/cli",
     demo: null,
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
-    featured: true
+    featured: false,
+    era: "era-modern"
   },
   {
-    id: 3,
-    name: "Sistema de Barbería",
+    id: 5,
+    name: "Barbería System",
     description: {
-      es: "Sistema de gestión de citas para barberías en PHP y MySQL",
-      en: "Barbershop appointment management system in PHP and MySQL"
+      es: "Sistema de gestión y citas desarrollado en etapas tempranas utilizando el stack clásico web.",
+      en: "Management and appointment system developed in early stages using the classic web stack."
     },
-    tech: ["PHP", "MySQL", "HTML", "CSS"],
+    tech: ["PHP", "MySQL", "CSS"],
     github: "https://github.com/luismoron/barberianaza",
     demo: null,
     image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
-    featured: false
+    featured: false,
+    era: "era-retro"
   },
   {
-    id: 4,
-    name: "Barbershop Teams",
+    id: 112,
+    name: "Solutions Backend",
     description: {
-      es: "Aplicación para gestión de citas de barberos con equipos",
-      en: "App for barber appointment management with teams"
+      es: "Conjunto de microservicios y herramientas de backend para procesamiento distribuido.",
+      en: "Set of microservices and backend tools for distributed processing."
     },
-    tech: ["JavaScript", "Node.js", "Express"],
+    tech: ["Node.js", "Express", "Vite"],
     github: "https://github.com/luismoron/barbershopteams",
     demo: null,
     image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
-    featured: false
+    featured: false,
+    era: "era-classic"
   }
 ];
 
 export const mockExperience = [
   {
     id: 1,
-    title: "Senior Full Stack Developer",
-    company: "Tech Solutions Inc.",
-    period: "2022 - Presente",
-    periodText: { es: "2022 - Presente", en: "2022 - Present" },
+    title: "IA Architect & Lead Developer",
+    company: "Corredor / Kasa",
+    period: "2024 - Presente",
+    periodText: { es: "2024 - Presente", en: "2024 - Present" },
     description: {
-      es: "Desarrollo de aplicaciones web y móviles usando React, Node.js y React Native.",
-      en: "Development of web and mobile applications using React, Node.js, and React Native."
-    }
+      es: "Liderando ecosistemas complejos: Desde automatización en Go e integración de IA hasta infraestructuras backend escalables y API Gateways.",
+      en: "Leading complex ecosystems: From Go automation and AI integration to scalable backend infrastructures and API Gateways."
+    },
+    era: "era-modern"
   },
   {
     id: 2,
-    title: "Frontend Developer",
-    company: "Digital Agency",
-    period: "2020 - 2022",
-    periodText: { es: "2020 - 2022", en: "2020 - 2022" },
+    title: "Senior Freelance Software Engineer",
+    company: "Independiente",
+    period: "2013 - 2023",
+    periodText: { es: "2013 - 2023", en: "2013 - 2023" },
     description: {
-      es: "Creación de interfaces de usuario responsivas y accesibles con React y Vue.js.",
-      en: "Creation of responsive and accessible user interfaces with React and Vue.js."
-    }
+      es: "Especializado en la modernización de sistemas de gestión. Diseño de bases de datos relacionales avanzadas y arquitecturas orientadas a servicios.",
+      en: "Specialized in modernization of management systems. Advanced relational database design and service-oriented architectures."
+    },
+    era: "era-classic"
   },
   {
     id: 3,
-    title: "Junior Developer",
-    company: "StartUp Innovation",
-    period: "2019 - 2020",
-    periodText: { es: "2019 - 2020", en: "2019 - 2020" },
+    title: "Full Stack Developer (Beginnings)",
+    company: "Freelance",
+    period: "2006 - 2012",
+    periodText: { es: "2006 - 2012", en: "2006 - 2012" },
     description: {
-      es: "Desarrollo de funcionalidades web y apoyo en proyectos de modernización.",
-      en: "Development of web features and support in modernization projects."
-    }
+      es: "Cimentación en PHP, jQuery y SQL. Desarrollo de sistemas de gestión y sitios web orientados a la eficiencia.",
+      en: "Foundation in PHP, jQuery, and SQL. Development of management systems and efficiency-oriented websites."
+    },
+    era: "era-retro"
+  }
+];
+
+export const timelineEvents = [
+  {
+    year: "2006",
+    title: { es: "El Inicio de la Travesía", en: "Journey Start" },
+    description: {
+      es: "Primeras líneas de código en un mundo web aún por explorar.",
+      en: "First lines of code in a web world yet to be explored."
+    },
+    era: "era-retro"
+  },
+  {
+    year: "2013",
+    title: { es: "Expansión Solucionadora", en: "Solver Expansion" },
+    description: {
+      es: "Consolidación como freelancer premium para soluciones de oficina y nube.",
+      en: "Consolidation as a premium freelancer for office and cloud solutions."
+    },
+    era: "era-classic"
+  },
+  {
+    year: "2024",
+    title: { es: "Nacimiento de Corredor", en: "Corredor Birth" },
+    description: {
+      es: "Integración masiva de IA y Go para revolucionar la gestión de procesos.",
+      en: "Massive integration of AI and Go to revolutionize process management."
+    },
+    era: "era-modern"
   }
 ];

@@ -79,3 +79,77 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Era Styles & Animations */
+
+/* Retro Era (2006-2012) - Terminal Phosphor */
+.era-retro {
+  transition: all 0.5s ease;
+}
+
+.era-retro:hover {
+  background: #000000 !important;
+  color: #00ff00 !important;
+  border-color: #00ff00 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+  font-family: 'Courier New', Courier, monospace !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.era-retro:hover::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.era-retro:hover h3, 
+.era-retro:hover p, 
+.era-retro:hover span {
+  color: #00ff00 !important;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.era-retro:hover img {
+  filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2);
+}
+
+/* Classic Era (2013-2020) - CMS / Corporate Blue */
+.era-classic {
+  transition: all 0.4s ease;
+}
+
+.era-classic:hover {
+  background: #f8fafc !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+}
+
+.dark .era-classic:hover {
+  background: #1e293b !important;
+}
+
+/* Modern Era (2021-Present) - Glassmorphism & Gradients */
+.era-modern {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.era-modern:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.dark .era-modern:hover {
+  background: rgba(30, 41, 59, 0.4) !important;
+}

@@ -39,7 +39,7 @@ const Experience = () => {
                 </div>
               </div>
 
-              <div className="bg-card p-6 rounded-xl border border-border hover:shadow-lg transition-shadow">
+              <div className={`bg-card p-6 rounded-xl border border-border hover:shadow-lg transition-all duration-300 ${job.era || ''}`}>
                 <p className="text-muted-foreground leading-relaxed">
                   {job.description[language]}
                 </p>

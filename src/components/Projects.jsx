@@ -31,8 +31,8 @@ const Projects = () => {
           <button
             onClick={() => setFilter('all')}
             className={`px-6 py-2 rounded-full transition-all duration-300 ${filter === 'all'
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
+              : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
               }`}
           >
             {t.filterAll}
@@ -40,8 +40,8 @@ const Projects = () => {
           <button
             onClick={() => setFilter('featured')}
             className={`flex items-center space-x-2 px-6 py-2 rounded-full transition-all duration-300 ${filter === 'featured'
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
+              : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
               }`}
           >
             <Star className="w-4 h-4" />
@@ -54,7 +54,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className={`group bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${project.era || ''}`}
             >
               <div className="relative h-48 overflow-hidden">
                 <img
