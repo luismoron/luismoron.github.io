@@ -243,5 +243,14 @@ export const timelineEvents = [
       en: "Massive integration of AI and Go to revolutionize process management."
     },
     era: "era-modern"
+  },
+  {
+    year: "2026",
+    title: { es: "Nacimiento de Kasa", en: "Kasa Birth" },
+    description: {
+      es: "Arquitectura inmobiliaria disruptiva con orquestación de IA y servicios escalables.",
+      en: "Disruptive real estate architecture with AI orchestration and scalable services."
+    },
+    era: "era-modern"
   }
 ];

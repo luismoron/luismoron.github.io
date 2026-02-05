@@ -87,7 +87,20 @@ html {
   transition: all 0.5s ease;
 }
 
-.era-retro:hover {
+/* Classic Era (2013-2020) - CMS / Corporate Blue */
+.era-classic {
+  transition: all 0.4s ease;
+}
+
+/* Modern Era (2021-Present) - Glassmorphism & Gradients */
+.era-modern {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Era Hover Effect - Terminal Style */
+.era-retro:hover,
+.era-classic:hover,
+.era-modern:hover {
   background: #000000 !important;
   color: #00ff00 !important;
   border-color: #00ff00 !important;
@@ -95,9 +108,13 @@ html {
   font-family: 'Courier New', Courier, monospace !important;
   position: relative;
   overflow: hidden;
+  transform: translateY(-8px) scale(1.02);
+  z-index: 10;
 }
 
-.era-retro:hover::before {
+.era-retro:hover::before,
+.era-classic:hover::before,
+.era-modern:hover::before {
   content: " ";
   display: block;
   position: absolute;
@@ -111,45 +128,36 @@ html {
   pointer-events: none;
 }
 
-.era-retro:hover h3, 
-.era-retro:hover p, 
-.era-retro:hover span {
+.era-retro:hover h1,
+.era-classic:hover h1,
+.era-modern:hover h1,
+.era-retro:hover h2,
+.era-classic:hover h2,
+.era-modern:hover h2,
+.era-retro:hover h3,
+.era-classic:hover h3,
+.era-modern:hover h3,
+.era-retro:hover p,
+.era-classic:hover p,
+.era-modern:hover p,
+.era-retro:hover span,
+.era-classic:hover span,
+.era-modern:hover span,
+.era-retro:hover div,
+.era-classic:hover div,
+.era-modern:hover div {
   color: #00ff00 !important;
   text-shadow: 0 0 5px #00ff00;
 }
 
-.era-retro:hover img {
-  filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2);
+.era-retro:hover img,
+.era-classic:hover img,
+.era-modern:hover img {
+  filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2) !important;
 }
 
-/* Classic Era (2013-2020) - CMS / Corporate Blue */
-.era-classic {
-  transition: all 0.4s ease;
-}
-
-.era-classic:hover {
-  background: #f8fafc !important;
-  border-color: #3b82f6 !important;
-  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
-}
-
-.dark .era-classic:hover {
-  background: #1e293b !important;
-}
-
-/* Modern Era (2021-Present) - Glassmorphism & Gradients */
-.era-modern {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.era-modern:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(12px);
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.3);
-}
-
+.dark .era-retro:hover,
+.dark .era-classic:hover,
 .dark .era-modern:hover {
-  background: rgba(30, 41, 59, 0.4) !important;
+  background: #000000 !important;
 }
