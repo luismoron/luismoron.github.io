@@ -75,7 +75,7 @@ export const mockProfile = {
   github: "https://github.com/luismoron/",
   gitlab: "https://gitlab.com/luislmoron",
   linkedin: "https://www.linkedin.com/in/luis-morón-922711323",
-  avatar: "/images/leonel.jpeg"
+  avatar: "https://teki.luismoron.dev/img/leonel.jpeg"
 };
 
 export const mockSkills = [
