@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://luismoron.github.io",
+  "homepage": "https://luismoron.dev",
   "engines": {
     "node": ">=20.0.0"
   },

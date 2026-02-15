@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://luismoron.github.io',
+  site: 'https://luismoron.dev',
   vite: {
     resolve: {
       alias: {
