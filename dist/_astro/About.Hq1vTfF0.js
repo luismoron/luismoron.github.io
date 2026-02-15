@@ -1,0 +1,21 @@
+import{u as l,j as e}from"./LanguageContext.B_3bnV1F.js";import"./index.DbEQb2qg.js";import{m as d,y as n}from"./mockData.CLCeSekg.js";import{t as c}from"./translations.C3OgdLl5.js";import{C as x,D as m}from"./database.D_tlYLpn.js";import{c as r}from"./createLucideIcon.U-eW2KDT.js";import{C as p}from"./code.D1en95Qf.js";/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const h=r("Globe",[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20",key:"13o1zl"}],["path",{d:"M2 12h20",key:"9i4pu4"}]]);/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const g=r("Server",[["rect",{width:"20",height:"8",x:"2",y:"2",rx:"2",ry:"2",key:"ngkwjq"}],["rect",{width:"20",height:"8",x:"2",y:"14",rx:"2",ry:"2",key:"iecqi9"}],["line",{x1:"6",x2:"6.01",y1:"6",y2:"6",key:"16zg32"}],["line",{x1:"6",x2:"6.01",y1:"18",y2:"18",key:"nzw8ys"}]]);/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const y=r("Smartphone",[["rect",{width:"14",height:"20",x:"5",y:"2",rx:"2",ry:"2",key:"1yt0o3"}],["path",{d:"M12 18h.01",key:"mhygvu"}]]);/**
+ * @license lucide-react v0.417.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const b=r("Terminal",[["polyline",{points:"4 17 10 11 4 5",key:"akl6gq"}],["line",{x1:"12",x2:"20",y1:"19",y2:"19",key:"q2wloq"}]]),u={Server:e.jsx(g,{className:"w-6 h-6"}),Database:e.jsx(m,{className:"w-6 h-6"}),Code:e.jsx(p,{className:"w-6 h-6"}),Terminal:e.jsx(b,{className:"w-6 h-6"}),Smartphone:e.jsx(y,{className:"w-6 h-6"}),Globe:e.jsx(h,{className:"w-6 h-6"}),Cpu:e.jsx(x,{className:"w-6 h-6"})},S=()=>{const{language:s}=l(),a=c[s].about,{aboutText:o}=d;return e.jsx("section",{id:"about",className:"py-20 px-4",children:e.jsxs("div",{className:"container mx-auto max-w-6xl",children:[e.jsxs("div",{className:"text-center mb-16",children:[e.jsx("h2",{className:"text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent",children:o.title[s]}),e.jsx("p",{className:"text-xl text-muted-foreground max-w-3xl mx-auto",children:o.intro[s]})]}),e.jsxs("div",{className:"grid md:grid-cols-2 gap-12 items-center",children:[e.jsxs("div",{className:"space-y-6",children:[e.jsx("div",{className:"prose prose-lg max-w-none",children:o.body.map((t,i)=>e.jsx("p",{className:"text-muted-foreground leading-relaxed",children:t[s]},i))}),e.jsxs("div",{className:"grid grid-cols-2 gap-4 pt-6",children:[e.jsxs("div",{className:"text-center p-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg border border-primary/10",children:[e.jsx("div",{className:"text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent",children:"50+"}),e.jsx("div",{className:"text-sm text-muted-foreground",children:a.stats.projects})]}),e.jsxs("div",{className:"text-center p-4 bg-gradient-to-br from-secondary/5 to-primary/5 rounded-lg border border-secondary/10",children:[e.jsxs("div",{className:"text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent",children:[n,"+"]}),e.jsx("div",{className:"text-sm text-muted-foreground",children:a.stats.years})]})]})]}),e.jsxs("div",{className:"space-y-6",children:[e.jsx("h3",{className:"text-2xl font-bold",children:a.subtitle}),d.aboutHighlights.map((t,i)=>e.jsxs("div",{className:"flex items-start space-x-4 p-6 bg-card rounded-lg border hover:shadow-lg transition-shadow",children:[e.jsx("div",{className:"p-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg text-primary border border-primary/20",children:u[t.iconType]}),e.jsxs("div",{children:[e.jsx("h3",{className:"font-semibold mb-2",children:t.title[s]}),e.jsx("p",{className:"text-sm text-muted-foreground",children:t.description[s]})]})]},i))]})]})]})})};export{S as default};
