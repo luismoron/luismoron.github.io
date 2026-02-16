@@ -93,6 +93,7 @@ const Header = () => {
 					<nav className="hidden md:flex items-center space-x-1">
 						{menuItems.map((item) => (
 							<button
+								type="button"
 								key={item.id}
 								onClick={() => handleNavClick(item.id)}
 								className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
@@ -129,6 +130,7 @@ const Header = () => {
 
 						{/* Language Toggle */}
 						<button
+							type="button"
 							onClick={toggleLanguage}
 							className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
 							title={
@@ -143,6 +145,7 @@ const Header = () => {
 
 						{/* Theme Toggle */}
 						<button
+							type="button"
 							onClick={toggleTheme}
 							className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
 						>
@@ -158,6 +161,7 @@ const Header = () => {
 					{/* Mobile Menu Button */}
 					<div className="md:hidden flex items-center space-x-2">
 						<button
+							type="button"
 							onClick={toggleLanguage}
 							className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
 						>
@@ -166,6 +170,7 @@ const Header = () => {
 							</span>
 						</button>
 						<button
+							type="button"
 							onClick={toggleTheme}
 							className="p-2 text-muted-foreground hover:text-foreground rounded-lg"
 						>
@@ -177,6 +182,7 @@ const Header = () => {
 								))}
 						</button>
 						<button
+							type="button"
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
 							className="p-2 text-muted-foreground hover:text-foreground rounded-lg"
 						>
@@ -195,6 +201,7 @@ const Header = () => {
 						<div className="flex flex-col space-y-2">
 							{menuItems.map((item) => (
 								<button
+									type="button"
 									key={item.id}
 									onClick={() => handleNavClick(item.id)}
 									className={`px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors ${

@@ -1,5 +1,4 @@
 import { CheckCircle2 } from "lucide-react";
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { timelineEvents } from "../data/mockData";
 
@@ -16,9 +15,9 @@ const Timeline = () => {
 				</h2>
 
 				<div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/20 before:to-transparent">
-					{timelineEvents.map((event, index) => (
+					{timelineEvents.map((event) => (
 						<div
-							key={index}
+							key={event.year}
 							className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${event.era}`}
 						>
 							{/* Icon */}

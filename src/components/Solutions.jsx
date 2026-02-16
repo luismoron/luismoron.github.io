@@ -1,5 +1,4 @@
-import { BarChart3, Cloud, Cpu, Database, Zap } from "lucide-react";
-import React from "react";
+import { Cloud, Cpu, Database, Zap } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Solutions = () => {
@@ -63,9 +62,9 @@ const Solutions = () => {
 				</div>
 
 				<div className="grid md:grid-cols-2 gap-8">
-					{solutions.map((sol, index) => (
+					{solutions.map((sol) => (
 						<div
-							key={index}
+							key={sol.title.en}
 							className="flex items-start space-x-6 p-8 bg-card border border-border rounded-2xl hover:border-primary/50 transition-all duration-300 group hover:shadow-xl"
 						>
 							<div className="p-4 bg-primary/10 rounded-2xl text-primary group-hover:scale-110 transition-transform duration-300">

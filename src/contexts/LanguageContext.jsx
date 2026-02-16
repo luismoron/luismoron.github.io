@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Estado global singleton para compartir entre islas de Astro
 let globalLanguage = "es";
@@ -31,7 +31,9 @@ const setLanguageGlobal = (newLanguage) => {
 	if (typeof window !== "undefined") {
 		localStorage.setItem("language", newLanguage);
 	}
-	listeners.forEach((listener) => listener(newLanguage));
+	listeners.forEach((listener) => {
+		listener(newLanguage);
+	});
 };
 
 export const useLanguage = () => {

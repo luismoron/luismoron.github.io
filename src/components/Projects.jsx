@@ -1,5 +1,5 @@
-import { Code, ExternalLink, Github, Star } from "lucide-react";
-import React, { useState } from "react";
+import { ExternalLink, Github, Star } from "lucide-react";
+import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { mockProjects } from "../data/mockData";
 import { translations } from "../data/translations";
@@ -29,6 +29,7 @@ const Projects = () => {
 				{/* Filters */}
 				<div className="flex justify-center space-x-4 mb-12">
 					<button
+						type="button"
 						onClick={() => setFilter("all")}
 						className={`px-6 py-2 rounded-full transition-all duration-300 ${
 							filter === "all"
@@ -39,6 +40,7 @@ const Projects = () => {
 						{t.filterAll}
 					</button>
 					<button
+						type="button"
 						onClick={() => setFilter("featured")}
 						className={`flex items-center space-x-2 px-6 py-2 rounded-full transition-all duration-300 ${
 							filter === "featured"

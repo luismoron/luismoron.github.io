@@ -1,5 +1,4 @@
 import { ArrowDown, Mail, MapPin } from "lucide-react";
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { mockProfile } from "../data/mockData";
 import { translations } from "../data/translations";
@@ -59,6 +58,7 @@ const Hero = () => {
 
 					{/* CTA Button */}
 					<button
+						type="button"
 						onClick={scrollToAbout}
 						className="group inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
 					>

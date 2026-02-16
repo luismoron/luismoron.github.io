@@ -1,5 +1,4 @@
 import { Briefcase, Calendar } from "lucide-react";
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { mockExperience } from "../data/mockData";
 import { translations } from "../data/translations";

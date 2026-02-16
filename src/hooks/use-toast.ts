@@ -9,6 +9,7 @@ type Toast = {
 	id: string;
 	open: boolean;
 	onOpenChange: (open: boolean) => void;
+	// biome-ignore lint/suspicious/noExplicitAny: Needed for dynamic properties
 	[key: string]: any;
 };
 
@@ -22,7 +23,7 @@ type Action =
 	| { type: "DISMISS_TOAST"; toastId?: string }
 	| { type: "REMOVE_TOAST"; toastId?: string };
 
-const actionTypes = {
+const _actionTypes = {
 	ADD_TOAST: "ADD_TOAST",
 	UPDATE_TOAST: "UPDATE_TOAST",
 	DISMISS_TOAST: "DISMISS_TOAST",
@@ -164,7 +165,7 @@ function useToast() {
 				listeners.splice(index, 1);
 			}
 		};
-	}, [state]);
+	}, []);
 
 	return {
 		...state,

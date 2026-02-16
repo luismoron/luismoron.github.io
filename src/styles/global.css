@@ -101,11 +101,11 @@ html {
 .era-retro:hover,
 .era-classic:hover,
 .era-modern:hover {
-	background: #000000 !important;
-	color: #00ff00 !important;
-	border-color: #00ff00 !important;
+	background: #000000;
+	color: #00ff00;
+	border-color: #00ff00;
 	box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
-	font-family: "Courier New", Courier, monospace !important;
+	font-family: "Courier New", Courier, monospace;
 	position: relative;
 	overflow: hidden;
 	transform: translateY(-8px) scale(1.02);
@@ -155,18 +155,18 @@ html {
 .era-retro:hover div,
 .era-classic:hover div,
 .era-modern:hover div {
-	color: #00ff00 !important;
+	color: #00ff00;
 	text-shadow: 0 0 5px #00ff00;
 }
 
 .era-retro:hover img,
 .era-classic:hover img,
 .era-modern:hover img {
-	filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2) !important;
+	filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2);
 }
 
 .dark .era-retro:hover,
 .dark .era-classic:hover,
 .dark .era-modern:hover {
-	background: #000000 !important;
+	background: #000000;
 }

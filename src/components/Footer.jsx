@@ -6,7 +6,6 @@ import {
 	Linkedin,
 	Mail,
 } from "lucide-react";
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { mockProfile } from "../data/mockData";
 import { translations } from "../data/translations";
@@ -136,6 +135,7 @@ const Footer = () => {
 							<Code className="w-3 h-3 inline mx-1 text-primary" /> {t.using}
 						</p>
 						<button
+							type="button"
 							onClick={scrollToTop}
 							className="p-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
 							aria-label={t.backToTop}

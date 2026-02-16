@@ -1,5 +1,4 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { mockProfile } from "../data/mockData";
 import { translations } from "../data/translations";

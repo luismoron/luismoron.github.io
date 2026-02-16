@@ -7,7 +7,6 @@ import {
 	Smartphone,
 	Terminal,
 } from "lucide-react";
-import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { mockProfile, yearsOfExperience } from "../data/mockData";
 import { translations } from "../data/translations";
@@ -43,9 +42,9 @@ const About = () => {
 					{/* Content */}
 					<div className="space-y-6">
 						<div className="prose prose-lg max-w-none">
-							{aboutText.body.map((paragraph, index) => (
+							{aboutText.body.map((paragraph) => (
 								<p
-									key={index}
+									key={paragraph.en.substring(0, 10)}
 									className="text-muted-foreground leading-relaxed"
 								>
 									{paragraph[language]}
@@ -77,9 +76,9 @@ const About = () => {
 					{/* Highlights */}
 					<div className="space-y-6">
 						<h3 className="text-2xl font-bold">{t.subtitle}</h3>
-						{mockProfile.aboutHighlights.map((highlight, index) => (
+						{mockProfile.aboutHighlights.map((highlight) => (
 							<div
-								key={index}
+								key={highlight.title.en}
 								className="flex items-start space-x-4 p-6 bg-card rounded-lg border hover:shadow-lg transition-shadow"
 							>
 								<div className="p-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg text-primary border border-primary/20">

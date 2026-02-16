@@ -1,5 +1,3 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Progress } from "../components/ui/progress";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -26,8 +24,8 @@ const Skills = () => {
 
 				{/* Main Skills with Progress */}
 				<div className="grid md:grid-cols-2 gap-8 mb-12">
-					{topSkills.map((skill, index) => (
-						<div key={index} className="space-y-2">
+					{topSkills.map((skill) => (
+						<div key={skill.name} className="space-y-2">
 							<div className="flex justify-between items-center">
 								<span className="font-medium">{skill.name}</span>
 								<div className="flex items-center space-x-2">
@@ -48,9 +46,9 @@ const Skills = () => {
 						Todas las Tecnologías
 					</h3>
 					<div className="flex flex-wrap justify-center gap-2">
-						{allSkills.map((skill, index) => (
+						{allSkills.map((skill) => (
 							<Badge
-								key={index}
+								key={skill}
 								variant="secondary"
 								className="px-3 py-1 text-sm  hover:from-primary hover:to-secondary hover:text-primary-foreground transition-all duration-300 cursor-pointer transform hover:scale-105"
 							>

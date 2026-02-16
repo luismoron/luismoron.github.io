@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Estado global singleton para compartir entre islas de Astro
 let globalTheme = "light";
@@ -26,7 +26,9 @@ const setThemeGlobal = (newTheme) => {
 		localStorage.setItem("theme", newTheme);
 		document.documentElement.className = newTheme;
 	}
-	listeners.forEach((listener) => listener(newTheme));
+	listeners.forEach((listener) => {
+		listener(newTheme);
+	});
 };
 
 export const useTheme = () => {
