@@ -3,129 +3,138 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+		--primary: 221.2 83.2% 53.3%;
+		--primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 221.2 83.2% 53.3%;
 
-    --radius: 0.5rem;
-  }
+		--radius: 0.5rem;
+	}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+		--primary: 217.2 91.2% 59.8%;
+		--primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
-  }
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+		--ring: 224.3 76.3% 48%;
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+	* {
+		@apply border-border;
+	}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+	body {
+		@apply bg-background text-foreground;
+	}
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 /* Era Styles & Animations */
 
 /* Retro Era (2006-2012) - Terminal Phosphor */
 .era-retro {
-  transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 /* Classic Era (2013-2020) - CMS / Corporate Blue */
 .era-classic {
-  transition: all 0.4s ease;
+	transition: all 0.4s ease;
 }
 
 /* Modern Era (2021-Present) - Glassmorphism & Gradients */
 .era-modern {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Global Era Hover Effect - Terminal Style */
 .era-retro:hover,
 .era-classic:hover,
 .era-modern:hover {
-  background: #000000 !important;
-  color: #00ff00 !important;
-  border-color: #00ff00 !important;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
-  font-family: 'Courier New', Courier, monospace !important;
-  position: relative;
-  overflow: hidden;
-  transform: translateY(-8px) scale(1.02);
-  z-index: 10;
+	background: #000000 !important;
+	color: #00ff00 !important;
+	border-color: #00ff00 !important;
+	box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+	font-family: "Courier New", Courier, monospace !important;
+	position: relative;
+	overflow: hidden;
+	transform: translateY(-8px) scale(1.02);
+	z-index: 10;
 }
 
 .era-retro:hover::before,
 .era-classic:hover::before,
 .era-modern:hover::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size: 100% 2px, 3px 100%;
-  pointer-events: none;
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background:
+		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+		linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 0.06),
+			rgba(0, 255, 0, 0.02),
+			rgba(0, 0, 255, 0.06)
+		);
+	z-index: 2;
+	background-size:
+		100% 2px,
+		3px 100%;
+	pointer-events: none;
 }
 
 .era-retro:hover h1,
@@ -146,18 +155,18 @@ html {
 .era-retro:hover div,
 .era-classic:hover div,
 .era-modern:hover div {
-  color: #00ff00 !important;
-  text-shadow: 0 0 5px #00ff00;
+	color: #00ff00 !important;
+	text-shadow: 0 0 5px #00ff00;
 }
 
 .era-retro:hover img,
 .era-classic:hover img,
 .era-modern:hover img {
-  filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2) !important;
+	filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2) !important;
 }
 
 .dark .era-retro:hover,
 .dark .era-classic:hover,
 .dark .era-modern:hover {
-  background: #000000 !important;
+	background: #000000 !important;
 }

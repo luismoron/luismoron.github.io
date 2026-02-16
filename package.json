@@ -26,7 +26,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "predeploy": "pnpm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "format": "biome format --write ./src",
+    "lint": "biome check --write ./src",
+    "check": "biome check --apply ./src"
   },
   "browserslist": {
     "production": [
@@ -41,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.0",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.12",
     "@types/react": "^19.2.7",
