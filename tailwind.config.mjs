@@ -5,7 +5,7 @@ import tailwindcssTypography from '@tailwindcss/typography';
 export default {
   darkMode: ["class"],
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./index.html"
   ],
   theme: {

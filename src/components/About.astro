@@ -1,0 +1,89 @@
+---
+import { mockProfile, yearsOfExperience } from "../data/mockData";
+import { translations } from "../data/translations";
+
+const { lang = "es" } = Astro.props;
+const t = translations[lang].about;
+const { aboutText } = mockProfile;
+
+const getIcon = (type) => {
+  switch (type) {
+    case 'Server': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server w-6 h-6"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>';
+    case 'Database': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database w-6 h-6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>';
+    case 'Code': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code w-6 h-6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>';
+    case 'Terminal': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal w-6 h-6"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>';
+    case 'Smartphone': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone w-6 h-6"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>';
+    case 'Globe': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>';
+    case 'Cpu': return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-6 h-6"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>';
+    default: return '';
+  }
+};
+---
+
+<section id="about" class="py-20 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        {aboutText.title[lang]}
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        {aboutText.intro[lang]}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      {/* Content */}
+      <div class="space-y-6">
+        <div class="prose prose-lg max-w-none">
+          {aboutText.body.map((paragraph) => (
+            <p
+              class="text-muted-foreground leading-relaxed"
+            >
+              {paragraph[lang]}
+            </p>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div class="grid grid-cols-2 gap-4 pt-6">
+          <div class="text-center p-4 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg border border-primary/10">
+            <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              50+
+            </div>
+            <div class="text-sm text-muted-foreground">
+              {t.stats.projects}
+            </div>
+          </div>
+          <div class="text-center p-4 bg-gradient-to-br from-secondary/5 to-primary/5 rounded-lg border border-secondary/10">
+            <div class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
+              {yearsOfExperience}+
+            </div>
+            <div class="text-sm text-muted-foreground">
+              {t.stats.years}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Highlights */}
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold">{t.subtitle}</h3>
+        {mockProfile.aboutHighlights.map((highlight) => (
+          <div class="flex items-start space-x-4 p-6 bg-card rounded-lg border hover:shadow-lg transition-shadow">
+            <div class="p-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg text-primary border border-primary/20">
+              <Fragment set:html={getIcon(highlight.iconType)} />
+            </div>
+            <div>
+              <h3 class="font-semibold mb-2">
+                {highlight.title[lang]}
+              </h3>
+              <p class="text-sm text-muted-foreground">
+                {highlight.description[lang]}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

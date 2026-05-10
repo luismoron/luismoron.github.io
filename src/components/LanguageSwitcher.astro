@@ -1,0 +1,28 @@
+---
+const { currentLang = "es" } = Astro.props;
+---
+
+<div class="fixed bottom-6 left-6 z-50 animate-in fade-in slide-in-from-bottom-4 duration-500">
+  <div class="bg-black/80 backdrop-blur-md rounded-full p-1.5 flex items-center shadow-lg border border-white/10">
+    <a
+      href="/"
+      class={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+        currentLang === "es"
+          ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md transform scale-105"
+          : "text-gray-400 hover:text-white"
+      }`}
+    >
+      ES
+    </a>
+    <a
+      href="/en/"
+      class={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+        currentLang === "en"
+          ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md transform scale-105"
+          : "text-gray-400 hover:text-white"
+      }`}
+    >
+      EN
+    </a>
+  </div>
+</div>

@@ -1,0 +1,214 @@
+---
+import { mockProfile } from "../data/mockData";
+import { translations } from "../data/translations";
+import { Github, Gitlab, Languages, Menu, Moon, Sun, X } from "lucide";
+
+const { lang = "es" } = Astro.props;
+const t = translations[lang].nav;
+
+const menuItems = [
+  { id: "home", label: t.home },
+  { id: "about", label: t.about },
+  { id: "skills", label: t.skills },
+  { id: "projects", label: t.projects },
+  { id: "experience", label: t.experience },
+  { id: "contact", label: t.contact },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      {/* Logo */}
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+          <span class="text-white font-bold text-sm">LM</span>
+        </div>
+        <span class="font-bold text-lg hidden md:block tracking-tight text-foreground">
+          {mockProfile.name}
+        </span>
+      </div>
+
+      {/* Desktop Navigation */}
+      <nav class="hidden md:flex items-center space-x-1" id="desktop-nav">
+        {menuItems.map((item) => (
+          <a
+            href={`#${item.id}`}
+            data-section={item.id}
+            class="nav-item px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Actions */}
+      <div class="hidden md:flex items-center space-x-3">
+        <div class="flex items-center space-x-2 border-r border-border pr-3">
+          <a
+            href={mockProfile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a
+            href={mockProfile.gitlab}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gitlab"><path d="m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z"/></svg>
+          </a>
+        </div>
+
+        {/* Language Toggle */}
+        <a
+          href={lang === "es" ? "/en/" : "/"}
+          class="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+          title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+        >
+          <div class="flex items-center font-bold text-xs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages mr-1"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+            <span>{lang.toUpperCase()}</span>
+          </div>
+        </a>
+
+        {/* Theme Toggle */}
+        <button
+          id="theme-toggle"
+          class="theme-toggle-btn p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun sun-icon block dark:hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon moon-icon hidden dark:block"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <div class="md:hidden flex items-center space-x-2">
+        <a
+          href={lang === "es" ? "/en/" : "/"}
+          class="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-colors"
+        >
+          <span class="font-bold text-xs">{lang.toUpperCase()}</span>
+        </a>
+        <button
+          class="theme-toggle-btn p-2 text-muted-foreground hover:text-foreground rounded-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun sun-icon block dark:hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon moon-icon hidden dark:block"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button
+          id="mobile-menu-btn"
+          class="p-2 text-muted-foreground hover:text-foreground rounded-lg"
+        >
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    {/* Mobile Navigation */}
+    <nav id="mobile-nav" class="hidden md:hidden py-4 border-t border-border animate-in slide-in-from-top-2">
+      <div class="flex flex-col space-y-2">
+        {menuItems.map((item) => (
+          <a
+            href={`#${item.id}`}
+            data-section={item.id}
+            class="mobile-nav-item px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Theme Toggle Logic
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  
+  themeToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  });
+
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenuBtn && mobileNav && menuIcon && closeIcon) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  }
+
+  // Active Section Logic
+  const navItems = document.querySelectorAll('.nav-item');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  
+  const setActiveSection = () => {
+    const sections = ["home", "about", "skills", "projects", "experience", "contact"];
+    const scrollPosition = window.scrollY + 100;
+    
+    let current = "";
+    
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+        
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          current = section;
+          break;
+        }
+      }
+    }
+    
+    const applyActiveClasses = (items) => {
+      items.forEach(item => {
+        item.classList.remove('text-primary', 'bg-primary/10', 'font-semibold');
+        item.classList.add('text-muted-foreground');
+        
+        if (item.getAttribute('data-section') === current) {
+          item.classList.remove('text-muted-foreground');
+          item.classList.add('text-primary', 'bg-primary/10', 'font-semibold');
+        }
+      });
+    };
+    
+    applyActiveClasses(navItems);
+    applyActiveClasses(mobileNavItems);
+  };
+
+  window.addEventListener('scroll', setActiveSection);
+  
+  // Also close mobile menu when an item is clicked
+  mobileNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  });
+  
+  // Set initial active state
+  setTimeout(setActiveSection, 100);
+</script>

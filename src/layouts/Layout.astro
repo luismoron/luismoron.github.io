@@ -1,0 +1,90 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+}
+
+const { 
+  title, 
+  description, 
+  lang = "es" 
+} = Astro.props;
+
+const alternateLang = lang === "es" ? "en" : "es";
+const alternateUrl = lang === "es" 
+  ? new URL("/en", Astro.site || "https://luismoron.dev")
+  : new URL("/", Astro.site || "https://luismoron.dev");
+const currentUrl = new URL(Astro.url.pathname, Astro.site || "https://luismoron.dev");
+
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={currentUrl} />
+    
+    <!-- hreflang for SEO i18n -->
+    <link rel="alternate" hreflang={lang} href={currentUrl} />
+    <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/", Astro.site || "https://luismoron.dev")} />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Software Developer, Solutions Architect, Go, Golang, AI, Artificial Intelligence, Gemini, Backend, Full Stack, Luis Morón"
+    />
+    <meta name="author" content="Luis Morón" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:site_name" content="Luis Morón" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <meta
+      property="og:image"
+      content="https://teki.luismoron.dev/img/leonel.jpeg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <meta
+      itemprop="image"
+      content="https://teki.luismoron.dev/img/leonel.jpeg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Luis Morón - Software Developer & AI Architect"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://teki.luismoron.dev/img/leonel.jpeg"
+    />
+    <title>{title}</title>
+
+    <!-- Theme Initialization Script -->
+    <script is:inline>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches
+          ? "dark"
+          : "light";
+        const theme = savedTheme || systemTheme;
+        document.documentElement.className = theme;
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div class="App">
+      <slot />
+    </div>
+  </body>
+</html>

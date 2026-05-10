@@ -1,0 +1,70 @@
+---
+import { mockSkills } from "../data/mockData";
+import { translations } from "../data/translations";
+
+const { lang = "es" } = Astro.props;
+const t = translations[lang].skills;
+const topSkills = mockSkills.slice(0, 6);
+const allSkills = mockSkills.map((skill) => skill.name);
+---
+
+<section id="skills" class="py-20 px-4 bg-muted/30">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        {t.title}
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        {t.description}
+      </p>
+    </div>
+
+    {/* Main Skills with Progress */}
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      {topSkills.map((skill) => (
+        <div class="space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="font-medium">{skill.name}</span>
+            <div class="flex items-center space-x-2">
+              <span class="text-sm text-muted-foreground">
+                {skill.projects} proyectos
+              </span>
+              <span class="text-sm font-medium">{skill.level}%</span>
+            </div>
+          </div>
+          <div class="h-2 w-full bg-secondary rounded-full overflow-hidden">
+            <div 
+              class="h-full bg-primary transition-all duration-500" 
+              style={`width: ${skill.level}%`}
+            ></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* All Skills as Badges */}
+    <div class="space-y-4">
+      <h3 class="text-xl font-semibold text-center">
+        Todas las Tecnologías
+      </h3>
+      <div class="flex flex-wrap justify-center gap-2">
+        {allSkills.map((skill) => (
+          <span
+            class="inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:from-primary hover:to-secondary hover:text-primary-foreground cursor-pointer transform hover:scale-105"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    {/* Note about automatic detection */}
+    <div class="mt-12 text-center">
+      <p class="text-sm text-muted-foreground bg-card p-4 rounded-lg border inline-block">
+        💡 <strong>Datos automáticos:</strong> Estas habilidades son
+        detectadas automáticamente analizando los lenguajes y tecnologías
+        utilizadas en mis repositorios de GitHub y GitLab.
+      </p>
+    </div>
+  </div>
+</section>

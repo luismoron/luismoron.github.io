@@ -1,0 +1,79 @@
+---
+const { lang = "es" } = Astro.props;
+
+const solutions = [
+  {
+    title: { es: "Núcleo de Operaciones (Go)", en: "Operations Core (Go)" },
+    description: {
+      es: "Motor en Golang con Whatsmeow para comunicación nativa con WhatsApp y Protobuf para eficiencia extrema en datos.",
+      en: "Golang engine with Whatsmeow for native WhatsApp communication and Protobuf for extreme data efficiency.",
+    },
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>',
+  },
+  {
+    title: {
+      es: "Cerebro IA (Gemini 1.5 Flash)",
+      en: "AI Brain (Gemini 1.5 Flash)",
+    },
+    description: {
+      es: "Interpretación inteligente de requerimientos y gestión autónoma de interacciones complejas con clientes.",
+      en: "Intelligent requirement interpretation and autonomous management of complex client interactions.",
+    },
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>',
+  },
+  {
+    title: {
+      es: "Ecosistema Backend (Kasa)",
+      en: "Backend Ecosystem (Kasa)",
+    },
+    description: {
+      es: "Arquitectura basada en PostgreSQL 15+ con seguridad RLS, API automática vía PostgREST y tiempo real con Elixir.",
+      en: "Architecture based on PostgreSQL 15+ with RLS security, automatic API via PostgREST, and real-time with Elixir.",
+    },
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>',
+  },
+  {
+    title: { es: "Orquestación y Gateway", en: "Orchestration & Gateway" },
+    description: {
+      es: "Unificación de servicios bajo Kong API Gateway, gestión de identidades con GoTrue y persistencia en Redes ZeroTier.",
+      en: "Service unification under Kong API Gateway, identity management with GoTrue, and persistence on ZeroTier Networks.",
+    },
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>',
+  },
+];
+---
+
+<section id="solutions" class="py-20 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        {lang === "es"
+          ? "Ingeniería de Sistemas y Soluciones"
+          : "Systems Engineering & Solutions"}
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        {lang === "es"
+          ? "Arquitecturas robustas diseñadas para la escalabilidad y la eficiencia operativa."
+          : "Robust architectures designed for scalability and operational efficiency."}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {solutions.map((sol) => (
+        <div class="flex items-start space-x-6 p-8 bg-card border border-border rounded-2xl hover:border-primary/50 transition-all duration-300 group hover:shadow-xl">
+          <div class="p-4 bg-primary/10 rounded-2xl text-primary group-hover:scale-110 transition-transform duration-300">
+            <Fragment set:html={sol.icon} />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+              {sol.title[lang]}
+            </h3>
+            <p class="text-muted-foreground leading-relaxed">
+              {sol.description[lang]}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

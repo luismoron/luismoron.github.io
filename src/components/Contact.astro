@@ -1,0 +1,110 @@
+---
+import { mockProfile } from "../data/mockData";
+import { translations } from "../data/translations";
+
+const { lang = "es" } = Astro.props;
+const t = translations[lang].contact;
+
+const whatsappLink = `https://wa.me/${mockProfile.phone.replace("+", "")}`;
+---
+
+<section id="contact" class="py-20 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        {t.title}
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        {t.description}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      {/* Contact Info */}
+      <div class="space-y-8">
+        <div class="bg-card p-8 rounded-2xl border border-border shadow-lg">
+          <h3 class="text-2xl font-bold mb-6">{t.available}</h3>
+          <p class="text-muted-foreground mb-8">{t.availabilityText}</p>
+
+          <div class="space-y-6">
+            <a
+              href={`mailto:${mockProfile.email}`}
+              class="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group"
+            >
+              <div class="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-muted-foreground">{t.email}</p>
+                <p class="font-medium text-lg">{mockProfile.email}</p>
+              </div>
+            </a>
+
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group"
+            >
+              <div class="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-muted-foreground">{t.call}</p>
+                <p class="font-medium text-lg">{mockProfile.phone}</p>
+              </div>
+            </a>
+
+            <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group">
+              <div class="p-3 bg-primary/10 text-primary rounded-lg group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-muted-foreground">
+                  {t.location}
+                </p>
+                <p class="font-medium text-lg">
+                  {mockProfile.location}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center p-6 bg-blue-500/10 rounded-xl border border-blue-500/20 text-blue-500">
+          <div class="relative flex h-3 w-3 mr-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+          </div>
+          <span class="font-medium">{t.available}</span>
+        </div>
+      </div>
+
+      {/* WhatsApp Direct Action */}
+      <div class="bg-card p-8 rounded-2xl border border-border shadow-lg flex flex-col items-center justify-center text-center space-y-8">
+        <div class="p-6 bg-green-500/10 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone text-green-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold mb-4">{t.form.send}</h3>
+          <p class="text-muted-foreground max-w-sm mx-auto">
+            {lang === "es"
+              ? "Hablemos directamente por WhatsApp para una respuesta más rápida."
+              : "Let's chat directly on WhatsApp for a faster response."}
+          </p>
+        </div>
+
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

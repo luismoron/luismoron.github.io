@@ -1,79 +1,34 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Timeline from "../components/Timeline.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import Experience from "../components/Experience.astro";
+import Solutions from "../components/Solutions.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href="https://luismoron.dev/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Software Developer & Solutions Architect. Especializado en sistemas de alta disponibilidad con Go e Inteligencia Artificial."
-    />
-    <meta
-      name="keywords"
-      content="Software Developer, Solutions Architect, Go, Golang, AI, Artificial Intelligence, Gemini, Backend, Full Stack, Luis Morón"
-    />
-    <meta name="author" content="Luis Morón" />
-    <meta property="og:title" content="Luis Morón - Portfolio" />
-    <meta
-      property="og:description"
-      content="Software Developer & Solutions Architect. Especializado en sistemas de alta disponibilidad con Go e Inteligencia Artificial."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://luismoron.dev" />
-    <meta property="og:site_name" content="Luis Morón" />
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:image"
-      content="https://teki.luismoron.dev/img/leonel.jpeg"
-    />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="800" />
-    <meta
-      itemprop="image"
-      content="https://teki.luismoron.dev/img/leonel.jpeg"
-    />
-    <meta
-      property="og:image:alt"
-      content="Luis Morón - Software Developer & AI Architect"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:image"
-      content="https://teki.luismoron.dev/img/leonel.jpeg"
-    />
-    <title>Luis Morón - Portfolio</title>
-    <script is:inline>
-      (function () {
-        const savedTheme = localStorage.getItem("theme");
-        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-          .matches
-          ? "dark"
-          : "light";
-        const theme = savedTheme || systemTheme;
-        document.documentElement.className = theme;
-      })();
-    </script>
-  </head>
-  <body>
-    <div class="App">
-      <Header client:load />
-      <main>
-        <Hero client:load />
-        <About client:visible />
-        <Timeline client:visible />
-        <Skills client:visible />
-        <Projects client:visible />
-        <Experience client:visible />
-        <Solutions client:visible />
-        <Contact client:visible />
-      </main>
-      <Footer client:load />
-      <LanguageSwitcher client:load />
-    </div>
-  </body>
-</html>
+<Layout 
+  title="Luis Morón - Portfolio" 
+  description="Software Developer & Solutions Architect. Especializado en sistemas de alta disponibilidad con Go e Inteligencia Artificial."
+  lang="es"
+>
+  <Header lang="es" />
+  <main>
+    <Hero lang="es" />
+    <About lang="es" />
+    <Timeline lang="es" />
+    <Skills lang="es" />
+    <Projects lang="es" />
+    <Experience lang="es" />
+    <Solutions lang="es" />
+    <Contact lang="es" />
+  </main>
+  <Footer lang="es" />
+  <LanguageSwitcher currentLang="es" />
+</Layout>

@@ -1,159 +1,73 @@
-# 🚀 Luis Morón - Portfolio
+# 👨‍💻 Luis Morón - Portfolio Personal
 
-Un portafolio personal moderno construido con **Astro** y **React**, estilizado con **Tailwind CSS**. Incluye secciones para mostrar proyectos, experiencia, habilidades y contacto.
+![Astro](https://img.shields.io/badge/Astro-5.17-FF5D01?style=for-the-badge&logo=astro&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vanilla JS](https://img.shields.io/badge/Vanilla_JS-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## ✨ Características
+Portfolio personal de **Luis Morón**, Software Developer y Solutions Architect. 
+Sitio optimizado para máximo rendimiento y SEO, construido completamente con la arquitectura de renderizado estático de **Astro**.
 
-- **⚡ Astro Framework**: Rendimiento optimizado con generación de sitios estáticos
-- **⚛️ React Components**: Componentes interactivos como "islands" para mejor rendimiento
-- **🎨 Tailwind CSS**: Diseño moderno y responsivo
-- **🌙 Modo Oscuro**: Soporte completo para tema claro y oscuro
-- **📱 Responsive**: Diseño adaptativo para todos los dispositivos
-- **🔧 Node 20+**: Compatible con versiones modernas de Node.js
-- **📄 CV Automático**: Generación y descarga de CV en PDF con toda tu información
+## 🚀 Arquitectura y Tecnologías
 
-## 🛠️ Tecnologías Utilizadas
+Esta versión del portfolio se centra en **cero JavaScript de React en el cliente**. Todo el contenido se renderiza en el servidor en tiempo de construcción, lo que resulta en puntuaciones perfectas en Lighthouse (SEO, Accesibilidad, Rendimiento).
 
-- **Framework**: [Astro](https://astro.build/)
-- **UI Components**: React con [Radix UI](https://www.radix-ui.com/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Package Manager**: [pnpm](https://pnpm.io/)
-
-## 🚀 Inicio Rápido
-
-### Prerrequisitos
-
-- Node.js 20.0.0 o superior
-- pnpm (recomendado) o npm
-
-### Instalación
-
-1. Clona el repositorio:
-```bash
-git clone https://github.com/luismoron/luismoron.github.io.git
-cd luismoron.github.io
-```
-
-2. Instala las dependencias:
-```bash
-pnpm install
-```
-
-3. Inicia el servidor de desarrollo:
-```bash
-pnpm run start
-```
-
-4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador
-
-## 📜 Scripts Disponibles
-
-- `pnpm run start` - Inicia el servidor de desarrollo
-- `pnpm run build` - Construye el proyecto para producción
-- `pnpm run preview` - Vista previa del build de producción
-- `pnpm run deploy` - Despliega a GitHub Pages (requiere configuración)
+- **Framework Core:** [Astro](https://astro.build/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **Iconos:** [Lucide](https://lucide.dev/) (Incrustados directamente como SVGs para no depender de JS)
+- **Interactividad:** Vanilla JavaScript nativo (Light/Dark mode, menús, scroll tracking)
+- **Internacionalización (i18n):** Rutas estáticas generadas por servidor (`/` para ES, `/en/` para EN) usando metadatos `hreflang` para un SEO óptimo.
 
 ## 📁 Estructura del Proyecto
 
-```
-src/
-├── components/          # Componentes React reutilizables
-│   ├── ui/             # Componentes de UI básicos
-│   ├── About.jsx       # Sección Acerca de
-│   ├── Contact.jsx     # Sección de Contacto
-│   ├── Experience.jsx  # Sección de Experiencia
-│   ├── Footer.jsx      # Pie de página
-│   ├── Header.jsx      # Navegación principal
-│   ├── Hero.jsx        # Sección principal
-│   ├── Projects.jsx    # Sección de Proyectos
-│   └── Skills.jsx      # Sección de Habilidades
-├── contexts/           # Contextos de React
-│   └── ThemeContext.jsx # Gestión de tema oscuro/claro
-├── data/               # Datos estáticos
-│   └── mockData.ts     # Información del portafolio
-├── hooks/              # Hooks personalizados
-│   └── use-toast.ts    # Hook para notificaciones
-├── lib/                # Utilidades
-│   └── utils.ts        # Funciones de utilidad
-├── pages/              # Páginas de Astro
-│   └── index.astro     # Página principal
-└── styles/             # Estilos globales
-    └── global.css      # Estilos base de Tailwind
+```text
+/
+├── public/                 # Archivos estáticos (imágenes, favicons, CV.pdf)
+├── src/
+│   ├── components/         # Componentes nativos de Astro (.astro)
+│   ├── data/               # Datos estáticos (mockData.ts, translations.js)
+│   ├── layouts/            # Layouts base (Layout.astro maneja todo el SEO)
+│   ├── pages/              # Páginas del sitio (Rutas basadas en archivos)
+│   │   ├── index.astro     # Versión en Español (Default)
+│   │   └── en/
+│   │       └── index.astro # Versión en Inglés
+│   └── styles/             # Estilos globales de CSS (global.css)
+└── astro.config.mjs        # Configuración de Astro
 ```
 
-## 🎨 Personalización
+## 🛠️ Instalación y Uso Local
 
-### Cambiar Información Personal
+Asegúrate de tener Node.js >= 20.0 instalado.
 
-Edita el archivo `src/data/mockData.ts` para actualizar:
-- Información personal
-- Proyectos
-- Experiencia laboral
-- Habilidades
-- Enlaces de contacto
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/luismoron/luismoron.github.io.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   # o
+   pnpm install
+   ```
+3. Inicia el servidor de desarrollo local:
+   ```bash
+   npm run dev
+   ```
+   Abre [http://localhost:4321](http://localhost:4321) en tu navegador para ver el resultado.
 
-### Modificar Estilos
+## 📝 Gestión de Contenidos
 
-Los estilos están centralizados en Tailwind CSS. Para cambios globales, modifica:
-- `tailwind.config.mjs` - Configuración de Tailwind
-- `src/styles/global.css` - Estilos base
+El sitio obtiene su contenido de archivos estáticos en `src/data/`:
 
-### Agregar Nuevas Secciones
+- **`mockData.ts`**: Contiene la información personal, experiencia laboral, habilidades, línea de tiempo y lista de proyectos.
+- **`translations.js`**: Diccionario de textos en varios idiomas (`es`, `en`). Si necesitas añadir un nuevo idioma, agrégalo aquí y crea una nueva carpeta en `src/pages/[idioma]/index.astro`.
 
-1. Crea un nuevo componente en `src/components/`
-2. Importalo en `src/pages/index.astro`
-3. Agrega el componente con `client:load` si necesita interactividad
+## 🌐 Despliegue
 
-### Funcionalidad de CV
-
-El portafolio incluye un botón de descarga de CV que permite descargar un archivo PDF estático profesional.
-
-**Contenido del CV:**
-- Información personal completa
-- Biografía profesional
-- Habilidades técnicas
-- Experiencia laboral
-- Proyectos destacados
-- Información de contacto
-
-Para descargar el CV, simplemente haz clic en el botón "CV" en la barra de navegación.
-
-**Archivo del CV:**
-- Ubicación: `public/CV_Luis_Moron.pdf`
-- Nombre de descarga: `CV_Luis_Moron.pdf`
-- Para actualizar el CV, reemplaza el archivo en la carpeta `public/`
-
-## 🚀 Despliegue
-
-### GitHub Pages
-
-El proyecto está configurado para desplegarse automáticamente en GitHub Pages:
+El sitio está configurado para ser desplegado en **GitHub Pages**. 
+Para hacer un despliegue manual usando pnpm:
 
 ```bash
-pnpm run deploy
+npm run deploy
 ```
 
-### Otros Servicios
-
-El build de producción se genera en la carpeta `dist/` y puede desplegarse en cualquier servicio de hosting estático como:
-- Vercel
-- Netlify
-- GitHub Pages
-- Cloudflare Pages
-
-## 🤝 Contribuir
-
-Si encuentras algún problema o tienes sugerencias:
-
-1. Abre un issue en [GitHub Issues](https://github.com/luismoron/luismoron.github.io/issues)
-2. Crea un pull request con tus mejoras
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](LICENSE).
-
----
-
-⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub!</content>
-<parameter name="filePath">README.md
+*(Esto ejecutará el comando `astro build` para generar los archivos estáticos en la carpeta `dist/` y luego usará el paquete `gh-pages` para enviarlos a la rama correspondiente).*
