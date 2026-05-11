@@ -101,11 +101,11 @@ html {
 .era-retro:hover,
 .era-classic:hover,
 .era-modern:hover {
-	background: #000000;
-	color: #00ff00;
-	border-color: #00ff00;
-	box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
-	font-family: "Courier New", Courier, monospace;
+	background: #050505 !important;
+	color: #4af626 !important;
+	border-color: #4af626 !important;
+	box-shadow: 0 0 15px rgba(74, 246, 38, 0.3) !important;
+	font-family: "Courier New", Courier, monospace !important;
 	position: relative;
 	overflow: hidden;
 	transform: translateY(-8px) scale(1.02);
@@ -137,26 +137,15 @@ html {
 	pointer-events: none;
 }
 
-.era-retro:hover h1,
-.era-classic:hover h1,
-.era-modern:hover h1,
-.era-retro:hover h2,
-.era-classic:hover h2,
-.era-modern:hover h2,
-.era-retro:hover h3,
-.era-classic:hover h3,
-.era-modern:hover h3,
-.era-retro:hover p,
-.era-classic:hover p,
-.era-modern:hover p,
-.era-retro:hover span,
-.era-classic:hover span,
-.era-modern:hover span,
-.era-retro:hover div,
-.era-classic:hover div,
-.era-modern:hover div {
-	color: #00ff00;
-	text-shadow: 0 0 5px #00ff00;
+/* More readable phosphor glow */
+.era-retro:hover *,
+.era-classic:hover *,
+.era-modern:hover * {
+	color: #4af626 !important;
+	-webkit-text-fill-color: #4af626 !important;
+	background-image: none !important;
+	text-shadow: 0 0 2px rgba(74, 246, 38, 0.4) !important;
+	border-color: rgba(74, 246, 38, 0.5) !important;
 }
 
 .era-retro:hover img,
