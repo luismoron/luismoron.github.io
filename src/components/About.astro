@@ -69,8 +69,8 @@ const getIcon = (type) => {
       <div class="space-y-6">
         <h3 class="text-2xl font-bold">{t.subtitle}</h3>
         {mockProfile.aboutHighlights.map((highlight) => (
-          <div class="flex items-start space-x-4 p-6 bg-card rounded-lg border hover:shadow-lg transition-shadow">
-            <div class="p-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg text-primary border border-primary/20">
+          <div class="flex items-start space-x-4 p-6 bg-card rounded-lg border hover:shadow-lg transition-all duration-300 era-retro group">
+            <div class="p-3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg text-primary border border-primary/20 group-hover:border-primary transition-colors">
               <Fragment set:html={getIcon(highlight.iconType)} />
             </div>
             <div>
