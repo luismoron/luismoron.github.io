@@ -13,5 +13,26 @@ export default defineConfig({
     },
   },
 
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+
+  image: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'teki.luismoron.dev',
+      },
+    ],
+  },
 });

@@ -75,7 +75,7 @@ export const mockProfile = {
 	github: "https://github.com/luismoron/",
 	gitlab: "https://gitlab.com/luislmoron",
 	linkedin: "https://www.linkedin.com/in/luis-morón-922711323",
-	avatar: "https://teki.luismoron.dev/img/leonel.jpeg",
+	avatar: "https://teki.luismoron.dev/img/luis.jpeg",
 };
 
 export const mockSkills = [
@@ -95,10 +95,10 @@ export const mockProjects = [
 		id: 1,
 		name: "Corredor",
 		description: {
-			es: "Motor de automatización impulsado por IA. Orquestación en Go, comunicación binaria nativa y Gemini 1.5 Flash para procesamiento de lenguaje natural.",
-			en: "AI-driven automation engine. Go orchestration, native binary communication, and Gemini 1.5 Flash for natural language processing.",
+			es: "Plataforma de gestión de apuestas hípicas. Backoffice administrativo, scraping de datos de carreras y sistema completo de gestión de usuarios y grupos.",
+			en: "Horse racing betting management platform. Administrative backoffice, race data scraping, and complete user and group management system.",
 		},
-		tech: ["Go", "Gemini AI", "Redis", "Protobuf"],
+		tech: ["React + MUI", "Go + Fiber", "PostgreSQL", "Redis", "Puppeteer"],
 		github: "https://github.com/luismoron/",
 		demo: null,
 		image:
@@ -108,12 +108,12 @@ export const mockProjects = [
 	},
 	{
 		id: 2,
-		name: "Kasa (BaaS Architecture)",
+		name: "Kasa (Real Estate Platform)",
 		description: {
-			es: "Arquitectura Backend-as-a-Service escalable. PostgreSQL 15+ con seguridad RLS, API automatizada, tiempo real y orquestación vía API Gateway.",
-			en: "Scalable Backend-as-a-Service architecture. PostgreSQL 15+ with RLS security, automated API, real-time, and API Gateway orchestration.",
+			es: "Plataforma SaaS inmobiliaria. Gestión de propiedades, agencias, citas y leads. Dashboard administrativo con Next.js 15 + React 19, API en Go + Gin, PostgreSQL 15, JWT y sistema RBAC.",
+			en: "Real Estate SaaS platform. Property, agency, appointment and lead management. Admin dashboard with Next.js 15 + React 19, Go + Gin API, PostgreSQL 15, JWT and RBAC system.",
 		},
-		tech: ["PostgreSQL", "PostgREST", "Kong", "Elixir"],
+		tech: ["Next.js 15", "React 19", "Go + Gin", "PostgreSQL 15", "JWT", "RBAC"],
 		github: "https://github.com/luismoron/",
 		demo: null,
 		image:
@@ -152,21 +152,6 @@ export const mockProjects = [
 		era: "era-modern",
 	},
 	{
-		id: 5,
-		name: "Barbería System",
-		description: {
-			es: "Sistema de gestión y citas desarrollado en etapas tempranas utilizando el stack clásico web.",
-			en: "Management and appointment system developed in early stages using the classic web stack.",
-		},
-		tech: ["PHP", "MySQL", "CSS"],
-		github: "https://github.com/luismoron/barberianaza",
-		demo: null,
-		image:
-			"https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
-		featured: false,
-		era: "era-retro",
-	},
-	{
 		id: 112,
 		name: "Solutions Backend",
 		description: {
@@ -177,9 +162,54 @@ export const mockProjects = [
 		github: "https://github.com/luismoron/barbershopteams",
 		demo: null,
 		image:
-			"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
+			"https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=800&q=80",
 		featured: false,
 		era: "era-classic",
+	},
+	{
+		id: 113,
+		name: "Teki",
+		description: {
+			es: "Portfolio bilingüe para creadora de contenido visual. Sitio Astro + React con animaciones Framer Motion y soporte i18n completo ES/EN.",
+			en: "Bilingual portfolio for visual content creator. Astro + React site with Framer Motion animations and full i18n support ES/EN.",
+		},
+		tech: ["Astro", "React", "Tailwind", "Framer Motion", "i18n"],
+		github: null,
+		demo: "https://teki.luismoron.dev",
+		image:
+			"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80",
+		featured: false,
+		era: "era-modern",
+	},
+	{
+		id: 114,
+		name: "Pasos Firmes",
+		description: {
+			es: "Plataforma de salud comunitaria para adultos mayores. Landing en Astro + Dashboard en Next.js 14, backend en Go con PostgreSQL.",
+			en: "Community health platform for elderly. Astro landing page + Next.js 14 dashboard, Go backend with PostgreSQL.",
+		},
+		tech: ["Astro", "Next.js 14", "Go", "PostgreSQL", "TanStack Query"],
+		github: null,
+		demo: null,
+		image:
+			"https://plus.unsplash.com/premium_photo-1675780422499-cc2ad971306b?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		featured: false,
+		era: "era-modern",
+	},
+	{
+		id: 115,
+		name: "Reyes Asociados",
+		description: {
+			es: "LegalTech para bufete de abogados. Landing Astro + Dashboard Next.js 15, API Go + Fiber, generación de PDFs y almacenamiento en Cloudflare R2.",
+			en: "LegalTech for law firm. Astro landing + Next.js 15 dashboard, Go + Fiber API, PDF generation and Cloudflare R2 storage.",
+		},
+		tech: ["Astro", "Next.js 15", "Go + Fiber", "PostgreSQL", "Cloudflare R2"],
+		github: null,
+		demo: null,
+		image:
+			"https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+		featured: false,
+		era: "era-modern",
 	},
 ];
 
