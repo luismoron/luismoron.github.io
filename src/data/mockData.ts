@@ -175,9 +175,9 @@ export const mockProjects = [
 		},
 		tech: ["Astro", "React", "Tailwind", "Framer Motion", "i18n"],
 		github: null,
-		demo: "https://teki.luismoron.dev",
+		demo: "https://tekiofficial.me",
 		image:
-			"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80",
+			"https://tekiofficial.me/img/red-full.webp?auto=format&fit=crop&w=800&q=80",
 		featured: false,
 		era: "era-modern",
 	},

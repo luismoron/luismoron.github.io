@@ -33,6 +33,10 @@ export default defineConfig({
         protocol: 'https',
         hostname: 'teki.luismoron.dev',
       },
+      {
+        protocol: 'https',
+        hostname: 'tekiofficial.me',
+      },
     ],
   },
 });
