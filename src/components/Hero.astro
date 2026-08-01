@@ -7,54 +7,53 @@ const { lang = "es" } = Astro.props;
 const t = translations[lang].hero;
 ---
 
-<section
-  id="home"
-  class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12"
->
-  <div class="container mx-auto max-w-6xl text-center">
-    <!-- Avatar -->
-    <div class="relative inline-block mb-8">
-      <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-      <Image
-        src={mockProfile.avatar}
-        alt={mockProfile.name}
-        width={200}
-        height={200}
-        loading="eager"
-        class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500/30 shadow-2xl avatar-glow object-cover object-[50%_25%]"
-      />
+<section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-20 pb-12">
+  <div class="container mx-auto max-w-6xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left Column: Avatar + Name + Title -->
+      <div class="lg:col-span-5 text-center lg:text-left">
+        <div class="relative inline-block mb-6">
+          <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+          <Image
+            src={mockProfile.avatar}
+            alt={mockProfile.name}
+            width={280}
+            height={280}
+            loading="eager"
+            class="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full mx-auto border-4 border-blue-500/30 shadow-2xl avatar-glow object-cover object-[50%_25%]"
+          />
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+          {mockProfile.name}
+        </h1>
+
+        <p class="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-4">
+          {mockProfile.title[lang]}
+        </p>
+
+        <div class="flex items-center justify-center lg:justify-start space-x-2 text-muted-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>{mockProfile.location}</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Bio + CTA -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <p class="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+          {mockProfile.bio[lang]}
+        </p>
+
+        <a
+          href="#contact"
+          class="inline-flex items-center space-x-3 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-lg font-medium transition-all duration-300 ease-out shadow-lg shadow-blue-500/25 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/20"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>Contáctame</span>
+        </a>
+      </div>
     </div>
-
-    <!-- Name -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-      {mockProfile.name}
-    </h1>
-
-    <!-- Title -->
-    <p class="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6">
-      {mockProfile.title[lang]}
-    </p>
-
-    <!-- Location -->
-    <div class="flex items-center justify-center space-x-2 text-muted-foreground mb-6">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-      <span>{mockProfile.location}</span>
-    </div>
-
-    <!-- Bio -->
-    <p class="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-      {mockProfile.bio[lang]}
-    </p>
-
-    <!-- CTA Button -->
-    <a
-      href="#contact"
-      class="inline-flex items-center space-x-3 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-lg font-medium transition-all duration-300 ease-out shadow-lg shadow-blue-500/25 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/20"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-      </svg>
-      <span>Contáctame</span>
-    </a>
   </div>
 </section>
