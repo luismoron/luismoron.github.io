@@ -71,11 +71,12 @@ import "../styles/global.css";
     />
     <title>{title}</title>
 
-    <!-- Theme Initialization Script - Dark mode default -->
+    <!-- Theme Initialization Script - System preference default -->
     <script is:inline>
       (function () {
         const savedTheme = localStorage.getItem("theme");
-        const theme = savedTheme || "dark";
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
         document.documentElement.className = theme;
       })();
     </script>
