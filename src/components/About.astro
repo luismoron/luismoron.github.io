@@ -21,8 +21,8 @@ const getIcon = (type) => {
 };
 ---
 
-<section id="about" class="py-16 px-4">
-  <div class="container mx-auto max-w-4xl">
+<section id="about" class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="container mx-auto max-w-5xl">
 
     <!-- About Header -->
     <div class="text-center mb-12">
@@ -35,7 +35,7 @@ const getIcon = (type) => {
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-2 gap-4 mb-12">
+    <div class="grid grid-cols-2 gap-4 mb-12 max-w-lg mx-auto">
       <div class="text-center p-4 bg-card rounded-xl border border-border">
         <div class="text-3xl font-bold text-blue-500">
           50+
@@ -68,6 +68,7 @@ const getIcon = (type) => {
       <h3 class="text-lg font-semibold text-foreground">
         {t.subtitle || 'Especialidades'}
       </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       {mockProfile.aboutHighlights.map((highlight) => (
         <div class="flex items-start space-x-3 p-4 bg-card rounded-xl border border-border card-hover">
           <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500">
@@ -83,6 +84,7 @@ const getIcon = (type) => {
           </div>
         </div>
       ))}
+      </div>
     </div>
 
     <!-- Skills Pills -->
