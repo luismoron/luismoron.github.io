@@ -35,7 +35,7 @@ const getIcon = (type) => {
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-2 lg:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
+    <div class="grid grid-cols-2 gap-4 mb-8 max-w-xl mx-auto">
       <div class="text-center p-4 bg-card rounded-xl border border-border">
         <div class="text-3xl font-bold text-blue-500">
           50+
@@ -55,7 +55,7 @@ const getIcon = (type) => {
     </div>
 
     <!-- About Text + Highlights (2 columns on desktop) -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <!-- About Text -->
       <div class="space-y-4">
         <h3 class="text-lg font-semibold text-foreground">
@@ -73,7 +73,7 @@ const getIcon = (type) => {
         <h3 class="text-lg font-semibold text-foreground">
           {t.subtitle || 'Especialidades'}
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-3">
+        <div class="space-y-3">
         {mockProfile.aboutHighlights.map((highlight) => (
           <div class="flex items-start space-x-3 p-4 bg-card rounded-xl border border-border transition-all duration-300 ease-out hover:border-blue-500/30 hover:bg-blue-500/5">
             <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500">
