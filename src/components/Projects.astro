@@ -21,7 +21,7 @@ const t = translations[lang].projects;
     <!-- Desktop Grid (hidden on mobile) -->
     <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {mockProjects.map((project) => (
-        <div class="bg-card rounded-xl border border-border overflow-hidden card-hover">
+        <div class="bg-card rounded-xl border border-border overflow-hidden transition-all duration-300 ease-out hover:-translate-y-1 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10">
           {project.image && (
             <div class="relative h-40 overflow-hidden">
               <Image
@@ -87,7 +87,7 @@ const t = translations[lang].projects;
     <!-- Mobile Carousel (hidden on desktop) -->
     <div class="md:hidden carousel-snap flex gap-4 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4 snap-x">
       {mockProjects.map((project) => (
-        <div class="flex-shrink-0 w-72 bg-card rounded-xl border border-border overflow-hidden card-hover snap-start">
+        <div class="flex-shrink-0 w-72 bg-card rounded-xl border border-border overflow-hidden transition-transform duration-200 active:scale-[0.98] snap-start">
           {project.image && (
             <div class="relative h-40 overflow-hidden">
               <Image
