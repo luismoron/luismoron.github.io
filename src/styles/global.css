@@ -32,37 +32,39 @@
 		--input: 214.3 31.8% 91.4%;
 		--ring: 221.2 83.2% 53.3%;
 
-		--radius: 0.5rem;
+		--radius: 0.75rem;
 	}
 
 	.dark {
-		--background: 222.2 84% 4.9%;
-		--foreground: 210 40% 98%;
+		--background: 240 10% 4%;
+		--foreground: 220 15% 98%;
 
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
+		--card: 240 6% 8%;
+		--card-foreground: 220 15% 98%;
 
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
+		--popover: 240 6% 8%;
+		--popover-foreground: 220 15% 98%;
 
-		--primary: 217.2 91.2% 59.8%;
-		--primary-foreground: 222.2 47.4% 11.2%;
+		--primary: 217 91% 60%;
+		--primary-foreground: 0 0% 100%;
 
-		--secondary: 217.2 32.6% 17.5%;
-		--secondary-foreground: 210 40% 98%;
+		--secondary: 240 5% 12%;
+		--secondary-foreground: 220 15% 98%;
 
-		--muted: 217.2 32.6% 17.5%;
-		--muted-foreground: 215 20.2% 65.1%;
+		--muted: 240 5% 15%;
+		--muted-foreground: 215 20% 65%;
 
-		--accent: 217.2 32.6% 17.5%;
-		--accent-foreground: 210 40% 98%;
+		--accent: 240 5% 15%;
+		--accent-foreground: 220 15% 98%;
 
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 210 40% 98%;
+		--destructive: 0 62% 50%;
+		--destructive-foreground: 0 0% 100%;
 
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
-		--ring: 224.3 76.3% 48%;
+		--border: 240 5% 18%;
+		--input: 240 5% 18%;
+		--ring: 217 91% 60%;
+
+		--glow: 217 91% 60%;
 	}
 }
 
@@ -80,82 +82,50 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* Era Styles & Animations */
-
-/* Retro Era (2006-2012) - Terminal Phosphor */
-.era-retro {
-	transition: all 0.5s ease;
+/* Mobile Scroll Snap for Carousels */
+.carousel-snap {
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
 }
 
-/* Classic Era (2013-2020) - CMS / Corporate Blue */
-.era-classic {
-	transition: all 0.4s ease;
+.carousel-snap > * {
+	scroll-snap-align: start;
 }
 
-/* Modern Era (2021-Present) - Glassmorphism & Gradients */
-.era-modern {
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
-/* Global Era Hover Effect - Terminal Style */
-.era-retro:hover,
-.era-classic:hover,
-.era-modern:hover {
-	background: #050505 !important;
-	color: #4af626 !important;
-	border-color: #4af626 !important;
-	box-shadow: 0 0 15px rgba(74, 246, 38, 0.3) !important;
-	font-family: "Courier New", Courier, monospace !important;
-	position: relative;
-	overflow: hidden;
-	transform: translateY(-8px) scale(1.02);
-	z-index: 10;
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
 }
 
-.era-retro:hover::before,
-.era-classic:hover::before,
-.era-modern:hover::before {
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background:
-		linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
-		linear-gradient(
-			90deg,
-			rgba(255, 0, 0, 0.06),
-			rgba(0, 255, 0, 0.02),
-			rgba(0, 0, 255, 0.06)
-		);
-	z-index: 2;
-	background-size:
-		100% 2px,
-		3px 100%;
-	pointer-events: none;
+/* Mobile Animations */
+@media (max768px) {
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+	}
+
+	.animate-on-scroll.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-/* More readable phosphor glow */
-.era-retro:hover *,
-.era-classic:hover *,
-.era-modern:hover * {
-	color: #4af626 !important;
-	-webkit-text-fill-color: #4af626 !important;
-	background-image: none !important;
-	text-shadow: 0 0 2px rgba(74, 246, 38, 0.4) !important;
-	border-color: rgba(74, 246, 38, 0.5) !important;
+/* Glow Effect for Avatar */
+.avatar-glow {
+	box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
 }
 
-.era-retro:hover img,
-.era-classic:hover img,
-.era-modern:hover img {
-	filter: grayscale(1) sepia(1) hue-rotate(90deg) brightness(0.8) contrast(1.2);
+/* Card Hover Effect */
+.card-hover {
+	transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
-.dark .era-retro:hover,
-.dark .era-classic:hover,
-.dark .era-modern:hover {
-	background: #000000;
+.card-hover:active {
+	transform: scale(0.98);
 }
